@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./pages/about";
 import PortfolioRoute from "./routes/portfolioRoutes";
 
+
 function App() {
   return (
     <Router>
