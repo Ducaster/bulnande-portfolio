@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import logo from '../_images/logo.png';
-import {Link} from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 export const Background = styled.div`
-  background-color: #414040;
+  background-color: #2f2f2f;
+  padding: 10px;
 `;
 export const HeaderStyle = styled.div`
   display: flex;
@@ -15,8 +14,8 @@ export const HeaderStyle = styled.div`
     color: white;
   }
   img {
-    width: 40px;
-    height: 40px;
+    width: 220px;
+    /* height: 40px; */
   }
 `;
 
@@ -24,33 +23,60 @@ export const Navbar = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap : 20px;
+  gap: 20px;
 
-  a { 
+  .active {
+    color: #ee292f;
+  }
+
+  a {
     color: white;
     text-decoration: none;
   }
+  a:hover {
+    color: #ee292f;
+  }
 `;
+
+export const PathName = styled.p`
+  .navPath {
+  }
+`;
+
 function Header() {
-  //jsx문법
+  // const params = useParams();
   return (
     <Background>
-    <HeaderStyle>
-      <div className="header">
-        <a href="/"><img src={ logo }></img>bulnande</a>
-      </div>
-    </HeaderStyle>
-    <Navbar>
-      <Link to="/">
-        <p className="navPath">About us</p>
-      </Link>
-      <Link to="portfolio">
-        <p className="navPath">Portfolio</p>
-      </Link>
-      <Link to="contact">
-        <p className="navPath">Contact</p>
-      </Link>
-    </Navbar>
+      <HeaderStyle>
+        <Link to="/">
+          <img src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png" />
+        </Link>
+      </HeaderStyle>
+      <Navbar>
+        <Link to="/">
+          <PathName
+            className={window.location.pathname === "/" ? "active" : ""}
+          >
+            About us
+          </PathName>
+        </Link>
+        <Link to="/portfolio">
+          <PathName
+            className={
+              window.location.pathname === "/portfolio" ? "active" : ""
+            }
+          >
+            Portfolio
+          </PathName>
+        </Link>
+        <Link to="/contact">
+          <PathName
+            className={window.location.pathname === "/contact" ? "active" : ""}
+          >
+            Contact
+          </PathName>
+        </Link>
+      </Navbar>
     </Background>
   );
 }

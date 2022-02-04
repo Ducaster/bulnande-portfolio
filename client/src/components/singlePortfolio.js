@@ -24,7 +24,7 @@ export const SeeMore = styled.div`
   cursor: pointer;
 
   :hover {
-    font-weight: bold;
+    color: #ee292f;
   }
 `;
 

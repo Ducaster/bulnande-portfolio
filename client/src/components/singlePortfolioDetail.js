@@ -1,20 +1,34 @@
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { dummydata } from "../data/dummydata";
+import Layout from "../pages/layout";
+
+const boxFade = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;
 
 export const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: center; */
+  height: 80vh;
   gap: 10px;
-
-  :nth-child(1) {
-    font-size: 25px;
-    padding: 5px;
-  }
+  animation: 0.6s ease-in-out ${boxFade};
 `;
 
-// export const MainTitle = styled.div``
+export const MainTitle = styled.div`
+  font-weight: bold;
+  font-size: 25px;
+  padding: 5px;
+`;
 
 export const SubDiv = styled.div`
   display: flex;
@@ -61,6 +75,7 @@ export const Content = styled.div`
 
 function SinglePortfolioDetail() {
   const params = useParams();
+  // params = { * : /detail/1, id: 1 }
 
   const data = dummydata.filter((el) => {
     if (el.id == params.id) {
@@ -69,28 +84,28 @@ function SinglePortfolioDetail() {
   });
 
   return (
-    // <div>{console.log(data)}d</div>
-    <MainDiv>
-      {/* <MainTitle></MainTitle> */}
-      <div>{data[0].title}</div>
-      <SubDiv>
-        <img src={data[0].img} />
-        <ContentDiv>
-          <ContentBox>
-            <ContentName>행사명</ContentName>
-            <Content>{data[0].title}</Content>
-          </ContentBox>
-          <ContentBox>
-            <ContentName>행사일시</ContentName>
-            <Content>{data[0].date}</Content>
-          </ContentBox>
-          <ContentBox>
-            <ContentName>행사분류</ContentName>
-            <Content>{data[0].desc}</Content>
-          </ContentBox>
-        </ContentDiv>
-      </SubDiv>
-    </MainDiv>
+    <Layout>
+      <MainDiv>
+        <MainTitle>{data[0].title}</MainTitle>
+        <SubDiv>
+          <img src={data[0].img} />
+          <ContentDiv>
+            <ContentBox>
+              <ContentName>행사명</ContentName>
+              <Content>{data[0].title}</Content>
+            </ContentBox>
+            <ContentBox>
+              <ContentName>행사일시</ContentName>
+              <Content>{data[0].date}</Content>
+            </ContentBox>
+            <ContentBox>
+              <ContentName>행사분류</ContentName>
+              <Content>{data[0].desc}</Content>
+            </ContentBox>
+          </ContentDiv>
+        </SubDiv>
+      </MainDiv>
+    </Layout>
   );
 }
 
