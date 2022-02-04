@@ -42,13 +42,13 @@ function Header() {
     </HeaderStyle>
     <Navbar>
       <Link to="/">
-        <p clasName="navPath">About us</p>
+        <p className="navPath">About us</p>
       </Link>
       <Link to="portfolio">
-        <p clasName="navPath">Portfolio</p>
+        <p className="navPath">Portfolio</p>
       </Link>
       <Link to="contact">
-        <p clasName="navPath">Contact</p>
+        <p className="navPath">Contact</p>
       </Link>
     </Navbar>
     </Background>
