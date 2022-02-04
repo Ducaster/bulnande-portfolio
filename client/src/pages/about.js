@@ -1,5 +1,6 @@
 
 import Header from "../components/header";
+import Footer from "../components/footer";
 import styled from "styled-components";
 import arrowIcon from "../_images/arrow-right.png";
 import logo from '../_images/logo.png';
@@ -7,6 +8,7 @@ import humanLogo from '../_images/human.png';
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from "react-bootstrap";
+import Layout from "./layout";
 
 export const ImageTrans = styled.div`
     display: flex;
@@ -76,13 +78,15 @@ export const ValueImg = styled.div`
 
 export const Musician = styled.div`
     display: flex;
-    // justify-content: center;
+    justify-content: center;
+    // align-items: center;
     border: solid 1px red;
     margin: 20px;
     
     .musician_img {
         width: 500px;
     }
+    
     div > img {
         margin: 5px;
         width: 400px;
@@ -92,12 +96,22 @@ export const Musician = styled.div`
     .detail_comment {
         display: flex;
         flex-direction: column;
+        border: solid 1px red;
     }
+
+    .portfolio_btn {
+        display: inline;
+        border: solid 1px red;
+        position: relative;
+        top: 200px;
+        left: 70px;
+    }
+
 `
 function About() {
     return (
         <>
-            <Header />
+            <Header></Header>
             <ImageTrans>
                 <img src="https://media.discordapp.net/attachments/938684956916449330/939025934282022962/51742564ceae459f.jpeg?width=701&height=468"></img>
                 <TextArea>
@@ -140,15 +154,18 @@ function About() {
                 <div className='detail_comment'>
                     <div className='musician_comment'>
                         <h1>Value Creating for Artist</h1>
-                        <p>불난데 부채질은 아티스트들을 위한 무대를 제공합니다.<br/>뿐만 아니라 아티스트를 발굴하여 관객에게 소개합니다.</p>
+                        <p>불난데 부채질은 아티스트들을 위한 무대를 제공합니다.<br/>뿐만 아니라 무명의 아티스트를 발굴하여 관객에게 소개합니다.</p>
                     </div>
-                    <div calssName='portfolio_btn'>
-                        <Link to='portfolio'>
-                            <Button>show portfolio</Button>
-                        </Link>
+                    <div className='portfolioMove'>
+                        <div className='portfolio_btn'>
+                            <Link to='portfolio'>
+                                <button type="button" class="btn btn-dark">show portfolio</button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </Musician>
+            <Footer></Footer>
         </>
         
     )
