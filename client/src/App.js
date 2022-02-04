@@ -3,6 +3,7 @@ import "./App.css";
 import About from "./pages/about";
 import PortfolioRoute from "./routes/portfolioRoutes";
 import Contact from "./pages/contact";
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (
