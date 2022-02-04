@@ -61,6 +61,7 @@ export const Content = styled.div`
 
 function SinglePortfolioDetail() {
   const params = useParams();
+  // params = { * : /detail/1, id: 1 }
 
   const data = dummydata.filter((el) => {
     if (el.id == params.id) {

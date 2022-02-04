@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SinglePortfolio from "../components/singlePortfolio";
 import { dummydata } from "../data/dummydata";
+import Layout from "./layout";
 
 export const MainDiv = styled.div`
   display: flex;
@@ -12,11 +13,13 @@ export const MainDiv = styled.div`
 
 function Portfolio() {
   return (
-    <MainDiv>
-      {dummydata.map((el, idx) => {
-        return <SinglePortfolio key={idx} data={el} />;
-      })}
-    </MainDiv>
+    <Layout>
+      <MainDiv>
+        {dummydata.map((el, idx) => {
+          return <SinglePortfolio key={idx} data={el} />;
+        })}
+      </MainDiv>
+    </Layout>
   );
 }
 
