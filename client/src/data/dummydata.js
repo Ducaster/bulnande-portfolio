@@ -20,4 +20,11 @@ export const dummydata = [
     date: "2017-01-01",
     desc: "공연",
   },
+  {
+    id: 4,
+    img: "https://cdn.discordapp.com/attachments/938684956916449330/938689047805698048/photo_2017-12-09_23-10-00.jpeg",
+    title: "1250프로젝트",
+    date: "2018-01-01",
+    desc: "참여형프로젝트",
+  },
 ];
