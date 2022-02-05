@@ -13,7 +13,7 @@ const boxFade = keyframes`
 `;
 
 export const MainDiv = styled.div`
-  width: 1000px;
+  /* width: 1000px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

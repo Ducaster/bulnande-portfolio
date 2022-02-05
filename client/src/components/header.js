@@ -15,6 +15,7 @@ export const HeaderStyle = styled.div`
   }
   img {
     width: 220px;
+    margin: 10px;
     /* height: 40px; */
   }
 `;
@@ -58,6 +59,13 @@ function Header() {
             className={window.location.pathname === "/" ? "active" : ""}
           >
             About us
+          </PathName>
+        </Link>
+        <Link to="/team">
+          <PathName
+            className={window.location.pathname === "/team" ? "active" : ""}
+          >
+            Team
           </PathName>
         </Link>
         <Link to="/portfolio">
