@@ -3,13 +3,15 @@ import "./App.css";
 import About from "./pages/about";
 import PortfolioRoute from "./routes/portfolioRoutes";
 import Contact from "./pages/contact";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
+import Team from "./pages/team";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<About />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/portfolio/*" element={<PortfolioRoute />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
