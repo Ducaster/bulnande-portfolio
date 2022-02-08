@@ -17,15 +17,15 @@ export const MainDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   /* flex-direction: column; */
   /* height: 100%; */
   gap: 20px;
   animation: 0.7s ease-in-out ${boxFade};
-  background-color: white;
-  padding: 50px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
+  /* background-color: white; */
+  /* padding: 50px; */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px; */
 `;
 
 function Portfolio() {
