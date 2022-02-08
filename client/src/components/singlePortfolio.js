@@ -1,19 +1,36 @@
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const textAciton = keyframes`
+0% {
+color :black;
+}
+60%{
+color : #ee292f;
+}
+100%{
+color : black;
+}
+`;
 
 export const MainDiv = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 15px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
+  padding: 40px 0px 40px 0px;
+  border: 1px solid #f6f6f6;
+  border-radius: 10px;
+`;
 
-  img {
-    width: 300px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  img:hover {
-    transform: scale(1.05) translateY(-5px);
-  }
+export const MainTitle = styled.div`
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+  margin-left: 30px;
+  animation: 1s ease-in-out ${textAciton};
 `;
 
 export const SeeMore = styled.div`
@@ -28,10 +45,34 @@ export const SeeMore = styled.div`
   }
 `;
 
+export const ContentWarpper = styled.div`
+  display: flex;
+  img {
+    width: 300px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin: 0 20px 0 30px;
+    box-shadow: rgba(50, 50, 93, 1) 0px 10px 10px -10px;
+  }
+  img:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+`;
+
 export const ContentDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-right: 30px;
+
+  .right {
+    /* margin-right: 30px; */
+  }
+
+  .left {
+    margin-right: 0px;
+  }
 `;
 
 export const ContentBox = styled.div`
@@ -40,19 +81,24 @@ export const ContentBox = styled.div`
 `;
 
 export const ContentName = styled.div`
-  background-color: #e9e9e9e9;
-  border-radius: 10px;
+  width: 62px;
+  background-color: #2f2f2f;
+  border-radius: 5px;
   padding: 10px;
   margin: 3px;
   font-size: 12px;
+  color: white;
+  text-align: center;
+  box-shadow: rgba(50, 50, 93, 1) 2px 2px 0px;
 `;
 
 export const Content = styled.div`
   background-color: #f6f6f6;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
   margin: 3px;
   font-size: 12px;
+  box-shadow: rgba(50, 50, 93, 0.2) 2px 2px 0px;
 `;
 
 function SinglePortfolio({ data }) {
@@ -63,22 +109,25 @@ function SinglePortfolio({ data }) {
 
   return (
     <MainDiv>
-      <img onClick={() => moveToDetail(data.id)} src={data.img} />
-      <ContentDiv>
-        <ContentBox>
-          <ContentName>행사명</ContentName>
-          <Content>{data.title}</Content>
-        </ContentBox>
-        <ContentBox>
-          <ContentName>행사일시</ContentName>
-          <Content>{data.date}</Content>
-        </ContentBox>
-        <ContentBox>
-          <ContentName>행사분류</ContentName>
-          <Content>{data.desc}</Content>
-        </ContentBox>
-        <SeeMore onClick={() => moveToDetail(data.id)}>See more</SeeMore>
-      </ContentDiv>
+      <MainTitle>{data.title}</MainTitle>
+      <ContentWarpper>
+        <img onClick={() => moveToDetail(data.id)} src={data.img} />
+        <ContentDiv className="right">
+          <ContentBox>
+            <ContentName>행사명</ContentName>
+            <Content>{data.title}</Content>
+          </ContentBox>
+          <ContentBox>
+            <ContentName>행사일시</ContentName>
+            <Content>{data.date}</Content>
+          </ContentBox>
+          <ContentBox>
+            <ContentName>행사분류</ContentName>
+            <Content>{data.desc}</Content>
+          </ContentBox>
+          <SeeMore onClick={() => moveToDetail(data.id)}>See more</SeeMore>
+        </ContentDiv>
+      </ContentWarpper>
     </MainDiv>
   );
 }
