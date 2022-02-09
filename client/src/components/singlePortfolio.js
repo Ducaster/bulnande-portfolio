@@ -2,18 +2,20 @@ import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 export const textAciton = keyframes`
-0% {
-color :black;
-}
-60%{
-color : #ee292f;
-}
-100%{
-color : black;
+  0% {
+    color :black;
+  }
+  60%{
+    color : #ee292f;
+  }
+  100%{
+    color : black;
 }
 `;
 
 export const MainDiv = styled.div`
+  width: 565px;
+  height: 340px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -31,6 +33,11 @@ export const MainTitle = styled.div`
   font-weight: bold;
   margin-left: 30px;
   animation: 1s ease-in-out ${textAciton};
+  cursor: pointer;
+
+  :hover {
+    color: #ee292f;
+  }
 `;
 
 export const SeeMore = styled.div`
@@ -53,7 +60,7 @@ export const ContentWarpper = styled.div`
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
     margin: 0 20px 0 30px;
-    box-shadow: rgba(50, 50, 93, 1) 0px 10px 10px -10px;
+    box-shadow: rgba(50, 50, 93, 1) 0px 10px 10px -10x;
   }
   img:hover {
     transform: scale(1.05) translateY(-5px);
@@ -98,7 +105,7 @@ export const Content = styled.div`
   padding: 10px;
   margin: 3px;
   font-size: 12px;
-  box-shadow: rgba(50, 50, 93, 0.2) 2px 2px 0px;
+  box-shadow: rgba(50, 50, 93, 0.2) 1px 1px 0px;
 `;
 
 function SinglePortfolio({ data }) {
@@ -109,7 +116,7 @@ function SinglePortfolio({ data }) {
 
   return (
     <MainDiv>
-      <MainTitle>{data.title}</MainTitle>
+      <MainTitle onClick={() => moveToDetail(data.id)}>{data.title}</MainTitle>
       <ContentWarpper>
         <img onClick={() => moveToDetail(data.id)} src={data.img} />
         <ContentDiv className="right">
@@ -123,7 +130,7 @@ function SinglePortfolio({ data }) {
           </ContentBox>
           <ContentBox>
             <ContentName>행사분류</ContentName>
-            <Content>{data.desc}</Content>
+            <Content>{data.category}</Content>
           </ContentBox>
           <SeeMore onClick={() => moveToDetail(data.id)}>See more</SeeMore>
         </ContentDiv>
