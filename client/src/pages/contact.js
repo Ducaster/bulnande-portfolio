@@ -32,14 +32,8 @@ export const Name = styled.div`
 function Contact() {
   return (
     <Layout>
-      {/* <MainDiv>outclassstudio@gmail.com</MainDiv> */}
-      <Profile>
-        <img className='profileImg' src='https://cdn.discordapp.com/attachments/938684956916449330/940061727670829136/IMG_0691.JPG'></img>
-      </Profile>
-      <Name>
-        <p>최연호 | 컨텐츠개발팀장</p>
-
-      </Name>
+      <MainDiv>outclassstudio@gmail.com</MainDiv>
+      
     </Layout>
   );
 }
