@@ -1,7 +1,15 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+export const MainDiv = styled.div`
+  background-color: #2f2f2f;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+`;
+
 export const FooterDiv = styled.div`
+  width: 1150px;
   margin: 0;
   display: flex;
   align-items: center;
@@ -10,8 +18,8 @@ export const FooterDiv = styled.div`
   /* font-size: 15px; */
   /* color: #3b3b3b; */
   border: none;
-  background-color: #2f2f2f;
-  height: 100px;
+
+  height: 120px;
   color: white;
 `;
 
@@ -20,14 +28,14 @@ export const Left = styled.div`
   /* flex-direction: column; */
   /* align-items: right; */
   flex: 1 0 auto;
-  padding-left: 50px;
+  /* padding-left: 50px; */
 
   img {
     width: 150px;
   }
 
   div {
-    font-size: 12px;
+    font-size: 11px;
   }
 `;
 
@@ -35,7 +43,7 @@ export const Right = styled.div`
   display: flex;
   gap: 10px;
   justify-content: right;
-  padding-right: 50px;
+  /* padding-right: 50px; */
   flex: 1 0 auto;
   font-size: 13px;
   a {
@@ -60,23 +68,28 @@ function Footer() {
   };
 
   return (
-    <FooterDiv>
-      <Left>
-        <img src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png" />
-        <div>Copyright © 2015-2020, Bulnande All Rights Reserved.</div>
-      </Left>
-      <Right>
-        <Link to="/">
-          <PathName onClick={handleTop}>About us</PathName>
-        </Link>
-        <Link to="/portfolio">
-          <PathName onClick={handleTop}>Portfolio</PathName>
-        </Link>
-        <Link to="/contact">
-          <PathName onClick={handleTop}>Contact</PathName>
-        </Link>
-      </Right>
-    </FooterDiv>
+    <MainDiv>
+      <FooterDiv>
+        <Left>
+          <img src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png" />
+          <div>Copyright © 2015-2020, Bulnande All Rights Reserved.</div>
+        </Left>
+        <Right>
+          <Link to="/">
+            <PathName onClick={handleTop}>About us</PathName>
+          </Link>
+          <Link to="/team">
+            <PathName onClick={handleTop}>Team</PathName>
+          </Link>
+          <Link to="/portfolio">
+            <PathName onClick={handleTop}>Portfolio</PathName>
+          </Link>
+          <Link to="/contact">
+            <PathName onClick={handleTop}>Contact</PathName>
+          </Link>
+        </Right>
+      </FooterDiv>
+    </MainDiv>
   );
 }
 

@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import styled from "styled-components";
 import Layout from "./layout";
 
@@ -24,16 +24,22 @@ export const Profile = styled.div`
   }
 `;
 
+export const Box = styled.div`
+  border: 1px solid black;
+  height: 30px;
+  width: 100px;
+  background-color: white;
+`;
+
 export const Name = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 function Contact() {
   return (
     <Layout>
       <MainDiv>outclassstudio@gmail.com</MainDiv>
-      
     </Layout>
   );
 }
