@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import styled from "styled-components";
 import Layout from "./layout";
 import { useState } from "react";
@@ -25,6 +25,7 @@ export const ImgDiv = styled.div`
   }
 
 `;
+
 
 export const ContactDiv = styled.div`
   border: solid 1px red;
@@ -70,6 +71,7 @@ export const ContactDiv = styled.div`
 
 }
 `
+
 
 function Contact() {
   const sendMessage = () => {
