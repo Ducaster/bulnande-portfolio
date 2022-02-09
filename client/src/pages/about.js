@@ -173,7 +173,7 @@ function About() {
                     <ValueImg>
                         <img className='logo' src={ humanLogo }></img>
                         <div className='title'>
-                            <p>Humanity</p>
+                            <p>Connect</p>
                             <p>개인과 개인을 연결합니다.</p>
                         </div>
                     </ValueImg>
