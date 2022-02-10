@@ -189,7 +189,7 @@ function About() {
                         <img src='https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg'></img>
                     </ImageTrans>
                     <TextArea>
-                        <div><p><b>불난데 부채질</b><br/>세상을 바꾸는 문화기업입니다.</p></div>
+                        <div className='firstTitle'><p><b>불난데 부채질</b><br/>세상을 바꾸는 문화기업입니다.</p></div>
                         <div>
                             <p>우리는 사회적 기업으로서<br/>문화를 사랑하는 많은 청춘들과 함께 성장하고 있습니다.</p>
                         </div>
