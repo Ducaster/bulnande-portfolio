@@ -45,7 +45,6 @@ export const PathName = styled.p`
 `;
 
 function Header() {
-  // const params = useParams();
   return (
     <Background>
       <HeaderStyle>

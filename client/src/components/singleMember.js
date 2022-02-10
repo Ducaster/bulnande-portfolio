@@ -39,7 +39,7 @@ export const AllTeam = styled.div`
   align-items: center;
   /* flex-direction: column; */
   /* border: solid 1px red; */
-  margin: 20px;
+  margin: 25px 20px 10px 20px;
 `;
 
 export const Profile = styled.div`

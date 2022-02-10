@@ -21,10 +21,7 @@ export const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* height: 80vh; */
   gap: 30px;
-  /* background-color: white; */
   animation: 0.6s ease-in-out ${boxFade};
 `;
 
@@ -120,11 +117,15 @@ export const Photos = styled.div`
 `;
 
 function SinglePortfolioDetail() {
-  const [openPhoto, setOpenPhoto] = useState(false);
-  const [current, setCurrent] = useState(0);
   const params = useParams();
-  // params = { * : /detail/1, id: 1 }
 
+  //사진 열리는 조건 상태
+  const [openPhoto, setOpenPhoto] = useState(false);
+
+  //로드하는 사진 지정 상태
+  const [current, setCurrent] = useState(0);
+
+  //사진 클릭시 모달창 열리는 함수
   const handleOpenPhoto = (idx) => {
     setCurrent(idx);
     if (openPhoto) {
@@ -134,6 +135,7 @@ function SinglePortfolioDetail() {
     }
   };
 
+  //더미에서 데이터 추출
   const data = dummydata.filter((el) => {
     if (el.id == params.id) {
       return el;

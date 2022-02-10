@@ -59,8 +59,8 @@ export const Right = styled.div`
 export const PathName = styled.div``;
 
 function Footer() {
+  // 클릭하면 스크롤이 위로 올라가는 함수
   const handleTop = () => {
-    // 클릭하면 스크롤이 위로 올라가는 함수
     window.scrollTo({
       top: 0,
       behavior: "smooth",
