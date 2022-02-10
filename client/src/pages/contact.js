@@ -1,7 +1,6 @@
 
 import styled from "styled-components";
 import Layout from "./layout";
-import { useState } from "react";
 
 export const MainDiv = styled.div`
   display: flex;
@@ -37,7 +36,6 @@ export const ImgDiv = styled.div`
     height: 100%;
     over-fit: cover;
   }
-
 `;
 
 export const ContactDiv = styled.div`
@@ -61,7 +59,6 @@ export const ContactDiv = styled.div`
     margin: 20px;
     display: flex;
     justify-content: center;
-    
   }
 
   input {
@@ -105,32 +102,32 @@ export const ContactDiv = styled.div`
 
 function Contact() {
   const sendMessage = () => {
-    alert("문의 내용이 정상적으로 전달되었습니다.")
-  }
+    alert("문의 내용이 정상적으로 전달되었습니다.");
+  };
 
   const [checkValue, setCheckValue] = useState(false);
   const [email, setEmail] = useState("직접입력");
   const inputValue = (e) => {
-    if(e.target.value === "직접입력"){
+    if (e.target.value === "직접입력") {
       setCheckValue(true);
       setEmail(e.target.value);
     } else {
       setCheckValue(false);
       setEmail(e.target.value);
     }
-  }
-
+  };
 
   return (
     <Layout>
       <ContentWrapper>
         <ContactDiv>
-          <div className='title'>
+          <div className="title">
             <h1>Contact us</h1>
           </div>
-          <div className='contactForm'>
+          <div className="contactForm">
             <form onSubmit={(e) => e.preventDefault()}>
               <div class="input-group mb-3">
+
                 <span class="input-group-text" id="basic-addon3">Nickname</span>
                 <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
               </div>
@@ -153,14 +150,20 @@ function Contact() {
                 <span class="input-group-text">Message</span>
                 <textarea class="form-control" aria-label="With textarea" cols='1'></textarea>
               </div>
-              <div className='submitBtn'>
-                <button type="submit" class="btn btn-dark" onClick={sendMessage}>Send Message</button>
+              <div className="submitBtn">
+                <button
+                  type="submit"
+                  class="btn btn-dark"
+                  onClick={sendMessage}
+                >
+                  Send Message
+                </button>
               </div>
             </form>
           </div>
         </ContactDiv>
         <ImgDiv>
-          <img src='https://cdn.discordapp.com/attachments/938684956916449330/938689047805698048/photo_2017-12-09_23-10-00.jpeg'></img>
+          <img src="https://cdn.discordapp.com/attachments/938684956916449330/938689047805698048/photo_2017-12-09_23-10-00.jpeg"></img>
         </ImgDiv>
       </ContentWrapper>
       

@@ -71,7 +71,9 @@ function Header() {
         <Link to="/portfolio">
           <PathName
             className={
-              window.location.pathname === "/portfolio" ? "active" : ""
+              window.location.pathname.indexOf("/portfolio") !== -1
+                ? "active"
+                : ""
             }
           >
             Portfolio

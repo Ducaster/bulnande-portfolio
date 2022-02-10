@@ -1,8 +1,4 @@
 import styled from "styled-components";
-import SingleMember from "../components/singleMember";
-import { MainDiv } from "../components/singlePortfolioDetail";
-import { teamMember } from "../data/teamMember";
-import Layout from "./layout";
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -104,21 +100,45 @@ export const ImageWarpper = styled.div`
   }
 `;
 
-function Team() {
+function SingleMember({ data }) {
   return (
-    <Layout>
-      <MainDiv>
-        <TextWrapper>
-          많은 사람들은 실패를 두려워해 아예 시작조차 않는 경우가 많다. 그러나
-          내가 보기엔 실패란 시도조차 하지 않는 것을 의미한다.
-          <div>- 마리아 나브라틸로바</div>
-        </TextWrapper>
-        {teamMember.map((el, idx) => {
-          return <SingleMember key={idx} data={el} />;
-        })}
-      </MainDiv>
-    </Layout>
+    <ContentWrapper>
+      <AllTeam>
+        <Profile>
+          <img className="profileImg" src={data.profile} alt="" />
+        </Profile>
+        <Content>
+          <Name>
+            <h5>
+              {data.name}
+              <span style={{ color: "#ee292f", fontWeight: "bold" }}>
+                {" "}
+                /{" "}
+              </span>{" "}
+              <span style={{ color: "#a29797" }}>{data.position}</span>
+            </h5>
+          </Name>
+          {/* <SubText>Minhyeong Lee</SubText> */}
+          <Career>
+            Career
+            {data.career.map((el, idx) => {
+              return <p key={idx}>{el}</p>;
+            })}
+          </Career>
+          <Career>
+            Contact
+            <p>{data.email}</p>
+          </Career>
+        </Content>
+      </AllTeam>
+      <ImageWarpper>
+        <img
+          src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
+          alt=""
+        />
+      </ImageWarpper>
+    </ContentWrapper>
   );
 }
 
-export default Team;
+export default SingleMember;
