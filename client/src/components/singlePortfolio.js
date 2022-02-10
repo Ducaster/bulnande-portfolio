@@ -88,7 +88,7 @@ export const ContentBox = styled.div`
 `;
 
 export const ContentName = styled.div`
-  width: 62px;
+  width: 65px;
   background-color: #2f2f2f;
   border-radius: 5px;
   padding: 10px;
@@ -100,6 +100,7 @@ export const ContentName = styled.div`
 `;
 
 export const Content = styled.div`
+  width: 100px;
   background-color: #f6f6f6;
   border-radius: 5px;
   padding: 10px;
