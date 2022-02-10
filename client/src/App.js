@@ -5,10 +5,12 @@ import PortfolioRoute from "./routes/portfolioRoutes";
 import Contact from "./pages/contact";
 import "bootstrap/dist/css/bootstrap.css";
 import Team from "./pages/team";
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
   return (
     <Router>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/team" element={<Team />} />

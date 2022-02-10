@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import { dummydata } from "../data/dummydata";
 import Layout from "../pages/layout";
+import PhotoModal from "./photoModal";
 import { textAciton } from "./singlePortfolio";
 
 const boxFade = keyframes`
@@ -77,7 +79,7 @@ export const ContentBox = styled.div`
 `;
 
 export const ContentName = styled.div`
-  width: 69px;
+  width: 75px;
   background-color: #e9e9e9e9;
   border-radius: 5px;
   padding: 10px;
@@ -87,9 +89,11 @@ export const ContentName = styled.div`
   background-color: #2f2f2f;
   box-shadow: rgba(50, 50, 93, 1) 2px 2px 0px;
   text-align: center;
+  /* align-items: center; */
 `;
 
 export const Content = styled.div`
+  max-width: 190px;
   background-color: #f6f6f6;
   border-radius: 5px;
   padding: 10px;
@@ -105,9 +109,30 @@ export const VideoWrapper = styled.div`
   justify-content: center;
 `;
 
+export const Photos = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  gap: 5px;
+
+  img {
+    width: 180px;
+  }
+`;
+
 function SinglePortfolioDetail() {
+  const [openPhoto, setOpenPhoto] = useState(false);
+  const [current, setCurrent] = useState(0);
   const params = useParams();
   // params = { * : /detail/1, id: 1 }
+
+  const handleOpenPhoto = (idx) => {
+    setCurrent(idx);
+    if (openPhoto) {
+      setOpenPhoto(false);
+    } else {
+      setOpenPhoto(true);
+    }
+  };
 
   const data = dummydata.filter((el) => {
     if (el.id == params.id) {
@@ -138,6 +163,10 @@ function SinglePortfolioDetail() {
                 <ContentName>행사분류</ContentName>
                 <Content>{data[0].category}</Content>
               </ContentBox>
+              <ContentBox>
+                <ContentName>공연자</ContentName>
+                <Content>{data[0].performer}</Content>
+              </ContentBox>
             </ContentDiv>
           </SubDiv>
         </ContentWrapper>
@@ -147,6 +176,30 @@ function SinglePortfolioDetail() {
         </ContentWrapper>
         <ContentWrapper>
           <MainTitle>행사사진</MainTitle>
+          <Photos>
+            {data[0].photo
+              ? data[0].photo.map((el, idx) => {
+                  return (
+                    <img
+                      style={{ cursor: "pointer" }}
+                      key={idx}
+                      onClick={() => handleOpenPhoto(idx)}
+                      src={el}
+                      alt=""
+                    />
+                  );
+                })
+              : ""}
+          </Photos>
+          {openPhoto ? (
+            <PhotoModal
+              data={data[0].photo}
+              idx={current}
+              handleOpenPhoto={handleOpenPhoto}
+            />
+          ) : (
+            ""
+          )}
         </ContentWrapper>
         {data[0].video ? (
           <ContentWrapper>
