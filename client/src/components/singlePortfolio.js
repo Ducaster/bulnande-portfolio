@@ -111,8 +111,19 @@ export const Content = styled.div`
 
 function SinglePortfolio({ data }) {
   const navigate = useNavigate();
+
+  //디테일 페이지로 이동
   const moveToDetail = (id) => {
+    handleTop();
     navigate(`/portfolio/detail/${id}`);
+  };
+
+  // 클릭하면 스크롤이 위로 올라가는 함수
+  const handleTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
   };
 
   return (

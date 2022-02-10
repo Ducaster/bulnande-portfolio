@@ -14,7 +14,7 @@ export const MainWrapper = styled.div`
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
-  min-height: 800px;
+  /* min-height: 800px; */
   /* background-color: #f8f8f8; */
 `;
 

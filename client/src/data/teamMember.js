@@ -30,9 +30,8 @@ export const teamMember = [
     id: 4,
     name: "한승목",
     position: "대외협력팀장",
-    profile:
-      "https://cdn.discordapp.com/attachments/938684956916449330/941169629571743805/photo_2022-02-10_12.11.58.jpeg",
-    career: ["한양대 건축학과 전공"],
-    email: "Namkyu31@naver.com",
+    profile: "",
+    career: [],
+    email: "",
   },
 ];
