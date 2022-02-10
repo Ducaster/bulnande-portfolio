@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import styled from "styled-components";
 import Layout from "./layout";
 
@@ -12,10 +12,24 @@ export const MainDiv = styled.div`
   border: solid 1px red;
 `;
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  width: 1150px;
+  height: 600px;
+  padding: 50px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
+  border: 1px solid #f6f6f6;
+  border-radius: 10px;
+`;
+
 export const ImgDiv = styled.div`
-  border: soild 1px red;
+  border: solid 1px red;
   width: 50%;
-  height: 50%;
+  height: 100%;
+  margin-left: 10px;
+  
 
   img {
     width: 100%;
@@ -26,11 +40,19 @@ export const ImgDiv = styled.div`
 
 export const ContactDiv = styled.div`
   border: solid 1px red;
-  display: flex;
+  // display: flex;
   justify-content: center;
   flex-direction: column;
   width: 50%;
-  height: 50%;
+  height: 100%;
+  
+
+  .contactForm {
+    display: flex;
+    justify-content: center;
+    border: solid 1px red;
+    margin: 20px;
+  }
 
   .title {
     border: solid 1px red;
@@ -40,20 +62,31 @@ export const ContactDiv = styled.div`
   }
 
   input {
-    width: 150px;
+    width: 100%;
+    font-size: 1vmin;
   }
-
+  
   .input-group-text {
-    width: 100px;
+    width: 80px;
+    font-size: 1.3vmin;
+    justify-content: center;
+  }
+  .span {
+    display: inline-block;
+    width: 20px;
     text-align: center;
+    
   }
 
-  .contactForm {
-    display: flex;
-    justify-content: center;
-    border: solid 1px red;
-    margin: 20px;
+
+  .form-select {
+    font-size: 1vmin;
   }
+
+  .textarea {
+    margin-bottom: 10px;
+  }
+  
 
   // .contactForm > div {
   //   width: 30px;
@@ -64,8 +97,8 @@ export const ContactDiv = styled.div`
     justify-content: center;
     border: solid 1px red;
     margin: 30px;
-  }
-`;
+}
+`
 
 function Contact() {
   const sendMessage = () => {
@@ -86,7 +119,7 @@ function Contact() {
 
   return (
     <Layout>
-      <MainDiv>
+      <ContentWrapper>
         <ContactDiv>
           <div className="title">
             <h1>Contact us</h1>
@@ -94,56 +127,28 @@ function Contact() {
           <div className="contactForm">
             <form onSubmit={(e) => e.preventDefault()}>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">
-                  NickName
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="basic-url"
-                  aria-describedby="basic-addon3"
-                />
+
+                <span class="input-group-text" id="basic-addon3">Nickname</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
               </div>
               <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon3">
-                  Email
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Username"
-                  aria-label="Username"
-                />
-                <span class="input-group-text">@</span>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder={email}
-                  aria-label="Server"
-                />
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
-                  onChange={(e) => inputValue(e)}
-                >
+                <span class="input-group-text" id="basic-addon3">Email</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"/>
+                <span class="span input-group-text">@</span>
+                {checkValue ? <input type="text" class="form-control" placeholder={email} aria-label="Server" value=" "/> : <input type="text" class="form-control" value={email}/>}
+                <select class="form-select" aria-label="Default select example" onChange={(e) => inputValue(e)}>
                   <option selected>직접입력</option>
                   <option value="gmail.com">gmail.com</option>
                   <option value="naver.com">naver.com</option>
                 </select>
               </div>
-              <div class="input-group">
-                <span class="input-group-text">Title</span>
-                <textarea
-                  class="form-control"
-                  aria-label="With textarea"
-                ></textarea>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Title</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
               </div>
               <div class="input-group">
                 <span class="input-group-text">Message</span>
-                <textarea
-                  class="form-control"
-                  aria-label="With textarea"
-                ></textarea>
+                <textarea class="form-control" aria-label="With textarea" cols='1'></textarea>
               </div>
               <div className="submitBtn">
                 <button
@@ -160,7 +165,8 @@ function Contact() {
         <ImgDiv>
           <img src="https://cdn.discordapp.com/attachments/938684956916449330/938689047805698048/photo_2017-12-09_23-10-00.jpeg"></img>
         </ImgDiv>
-      </MainDiv>
+      </ContentWrapper>
+      
     </Layout>
   );
 }

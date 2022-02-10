@@ -10,37 +10,56 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from "react-bootstrap";
 import Layout from "./layout";
 
+
+export const AlignDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`;
+
 export const ImageTrans = styled.div`
     display: flex;
     justify-content: center;
     // background-color: #6581A6;
     border : 1px solid red;
+    width: 70%;
+    heigth: 70%;
 
     img {
-        // position: relative;
-        // left: 50px;
+        width: 100%;
+        height: 100%;
+        over-fit: cover;
     }
-
-
+    
 
 `;
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 1150px;
+  height: 600px;
+  padding: 50px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
+  border: 1px solid #f6f6f6;
+  border-radius: 10px;
+`;
 
 
 export const TextArea = styled.div`
     display: flex;
     justify-content: center;
-    background-color: #5D728E;
-    top: 50px;
-    right: 500px;
+    // align-items: column;
+    flex-direction: column;
+    border: solid 1px red;
 
     p {
-        position: relative;
-        top: 60px;
-        margin: 10px;
-        font-size: 80px;
-        color : white;
-        text-align: center;
+        font-size: 30px;
+        color : black;
+        // text-align: center;
+        border: solid 1px red;
     }
 
 `;
@@ -49,10 +68,13 @@ export const ValueList = styled.div`
     align-items: center;
     display: flex;
     flex-direction : column;
+
+    .valueTitle {
+        font-size: 30px;
+    }
     
     div:nth-child(2) {
         display: flex;
-        
     }
 `;
 
@@ -81,7 +103,7 @@ export const Musician = styled.div`
     justify-content: center;
     // align-items: center;
     border: solid 1px red;
-    margin: 50px;
+    // margin: 50px;
     
     .musician_img {
         width: 500px;
@@ -114,7 +136,7 @@ export const Musician = styled.div`
 export const Concert = styled.div`
     display: flex;
     justify-content: center;
-    margin: 50px;
+    // margin: 50px;
     border: solid 1px red;
 
     .concertInfo {
@@ -161,93 +183,110 @@ function About() {
     return (
         <>
             <Header></Header>
-            <ImageTrans>
-                <img src="https://media.discordapp.net/attachments/938684956916449330/939025934282022962/51742564ceae459f.jpeg?width=701&height=468"></img>
-                <TextArea>
-                    <p>We support<br/>youth dream</p>
-                </TextArea>
-            </ImageTrans>
-            <ValueList>
-                <div>사람의 가치를 발견합니다.</div>
-                <div>
-                    <ValueImg>
-                        <img className='logo' src={ humanLogo }></img>
-                        <div className='title'>
-                            <p>Connect</p>
-                            <p>개인과 개인을 연결합니다.</p>
+            <AlignDiv>
+                <ContentWrapper>
+                    <ImageTrans>
+                        <img src='https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg'></img>
+                    </ImageTrans>
+                    <TextArea>
+                        <div><p><b>불난데 부채질</b><br/>세상을 바꾸는 문화기업입니다.</p></div>
+                        <div>
+                            <p>우리는 사회적 기업으로서<br/>문화를 사랑하는 많은 청춘들과 함께 성장하고 있습니다.</p>
                         </div>
-                    </ValueImg>
-                    <ValueImg>
-                        <img className='logo' src={ humanLogo }></img>
-                        <div className='title'>
-                            <p>Dream</p>
-                            <p>개인의 꿈을 이룹니다.</p>
-                        </div>
-                    </ValueImg>
-                    <ValueImg>
-                        <img className='logo' src={ humanLogo }></img>
-                        <div className='title'>
-                            <p>Share</p>
-                            <p>가치를 공유합니다.</p>
-                        </div>
-                    </ValueImg>
-                </div>
-            </ValueList>
-            <div style={{width: '100px', heigth: '100px'}}>
+                    </TextArea>
+                </ContentWrapper>
 
-            </div>
-            <Musician>
-                <div className='musician_img'>
-                    <img src="https://cdn.discordapp.com/attachments/938684956916449330/939061482900049950/musician.jpeg"></img>
-                </div>
-                <div className='detail_comment'>
-                    <div className='musician_comment'>
-                        <h1>Value Creating for Artist</h1>
-                        <p>we support stage for artist.<br/>And we discover unknown artists and introduce them to the audience.</p>
-                    </div>
-                    <div className='portfolioMove'>
-                        <div className='portfolio_btn'>
-                            <Link to='portfolio'>
-                                <button type="button" class="btn btn-dark">show portfolio</button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </Musician>
-            <Concert>
-                <div className='concertInfo'>
-                    <h1>Passion Concert for youth</h1>
-                    <br/>
-                    <p>we support passion of youth.<br/>we want to explod your passion.</p>
-                </div>
-                <div className='concertImg'>
-                    <div>
+                <ContentWrapper>
+                    <ValueList>
+                        <div className='valueTitle'>사람의 가치를 발견합니다.</div>
                         <div>
-                            <Link to='portfolio/detail/1'>
-                                <img name='하늘에별따기' src="https://cdn.discordapp.com/attachments/938684956916449330/939322806498394192/bulbuConcert.jpg"></img>
-                            </Link>
+                            <ValueImg>
+                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941212833364996096/business-people.png'></img>
+                                <div className='title'>
+                                    <p>Connect</p>
+                                    <p>개인과 개인을 연결합니다.</p>
+                                </div>
+                            </ValueImg>
+                            <ValueImg>
+                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941213624503001108/orchestra.png'></img>
+                                <div className='title'>
+                                    <p>Artist</p>
+                                    <p>개인의 꿈을 이룹니다.</p>
+                                </div>
+                            </ValueImg>
+                            <ValueImg>
+                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941215089376235590/festival.png'></img>
+                                <div className='title'>
+                                    <p>Share</p>
+                                    <p>가치를 공유합니다.</p>
+                                </div>
+                            </ValueImg>
                         </div>
-                        <div>
-                            <Link to='portfolio/detail/4'>
-                                <img name='1250project' src="https://media.discordapp.net/attachments/938684956916449330/939783195367444490/concert.2.jpeg"></img>
-                            </Link>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <Link to='portfolio/detail/3'>
-                                <img name='시즌'src="https://cdn.discordapp.com/attachments/938684956916449330/939783195673657364/concert1.jpeg"></img>
-                            </Link>
-                        </div>
-                        <div>
-                            <Link to='portfolio/detail/2'>
-                                <img name='소통' src="https://cdn.discordapp.com/attachments/938684956916449330/939783196034359296/concert3.jpeg"></img>
-                            </Link>
-                        </div>
-                    </div>
+                    </ValueList>
+                </ContentWrapper>
+                <div style={{width: '100px', heigth: '100px'}}>
+
                 </div>
-                
-            </Concert>
+
+                <ContentWrapper>
+                    <Musician>
+                        <div className='musician_img'>
+                            <img src="https://cdn.discordapp.com/attachments/938684956916449330/939061482900049950/musician.jpeg"></img>
+                        </div>
+                        <div className='detail_comment'>
+                            <div className='musician_comment'>
+                                <h1>Value Creating for Artist</h1>
+                                <p>we support stage for artist.<br/>And we discover unknown artists and introduce them to the audience.</p>
+                            </div>
+                            <div className='portfolioMove'>
+                                <div className='portfolio_btn'>
+                                    <Link to='portfolio'>
+                                        <button type="button" class="btn btn-dark">show portfolio</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </Musician>
+                </ContentWrapper>
+
+                <ContentWrapper>
+                    <Concert>
+                        <div className='concertInfo'>
+                            <h1>Passion Concert for youth</h1>
+                            <br/>
+                            <p>we support passion of youth.<br/>we want to explod your passion.</p>
+                        </div>
+                        <div className='concertImg'>
+                            <div>
+                                <div>
+                                    <Link to='portfolio/detail/1'>
+                                        <img name='하늘에별따기' src="https://cdn.discordapp.com/attachments/938684956916449330/939322806498394192/bulbuConcert.jpg"></img>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link to='portfolio/detail/4'>
+                                        <img name='1250project' src="https://media.discordapp.net/attachments/938684956916449330/939783195367444490/concert.2.jpeg"></img>
+                                    </Link>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <Link to='portfolio/detail/3'>
+                                        <img name='시즌'src="https://cdn.discordapp.com/attachments/938684956916449330/939783195673657364/concert1.jpeg"></img>
+                                    </Link>
+                                </div>
+                                <div>
+                                    <Link to='portfolio/detail/2'>
+                                        <img name='소통' src="https://cdn.discordapp.com/attachments/938684956916449330/939783196034359296/concert3.jpeg"></img>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </Concert>
+                </ContentWrapper>
+
+            </AlignDiv>
 
             <Footer></Footer>
         </>
