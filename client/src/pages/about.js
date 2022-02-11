@@ -20,15 +20,15 @@ import React, { Component } from "react";
 
 export const AlignDiv = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    // flex-direction: column;
 `;
 
 export const ImageTrans = styled.div`
     display: flex;
     justify-content: center;
     // background-color: #6581A6;
-    border : 1px solid red;
+    // : 1px solid red;
     width: 70%;
     heigth: 70%;
 
@@ -49,7 +49,7 @@ export const ContentWrapper = styled.div`
   background-color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
-  border: 1px solid #f6f6f6;
+  //*** 1px solid #f6f6f6;
   border-radius: 10px;
 `;
 
@@ -64,7 +64,7 @@ export const BlackContentWrapper = styled.div`
   background-color: #433B39;
   box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
-  border: 1px solid #f6f6f6;
+  //*** 1px solid #f6f6f6;
   border-radius: 10px;
 `;
 
@@ -72,21 +72,23 @@ export const BlackContentWrapper = styled.div`
 export const TextArea = styled.div`
     display: flex;
     justify-content: center;
+    margin-left: 20px;
     
     flex-direction: column;
-    border: solid 1px red;
+    //*** solid 1px red;
 
     .introLogoDiv {
         display: flex;
         justify-content: center;
-        border: solid 1px red;
+        margin-bottom: 20px;
+        //*** solid 1px red;
     }
 
     .introLogo {
         display: flex;
         width: 50px;
         hegith: 50px;
-        border: solid 1px red;
+        //*** solid 1px red;
         
         img {
             width: 100%;
@@ -98,7 +100,7 @@ export const TextArea = styled.div`
         font-size: 30px;
         color : black;
         // text-align: center;
-        border: solid 1px red;
+        //*** solid 1px red;
     }
 
     .introContent {
@@ -122,7 +124,7 @@ export const ValueList = styled.div`
     }
 `;
 export const ValueImgDiv = styled.div`
-    border: solid 1px red;
+    //*** solid 1px red;
     display: flex;
     flex-direction: row;
 `;
@@ -132,15 +134,21 @@ export const ValueImg = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0px;
-    border: solid 1px red;
+    //*** solid 1px red;
 
     .logo {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
         margin-bottom: 30px;
-    }
-    .title {
         border: solid 1px red;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .title {
+        //*** solid 1px red;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -154,20 +162,21 @@ export const Musician = styled.div`
     display: flex;
     justify-content: center;
     // align-items: center;
-    border: solid 1px red;
+    //*** solid 1px red;
     // margin: 50px;
 
     .introLogoDiv {
         display: flex;
         justify-content: center;
-        border: solid 1px red;
+        margin-bottom: 20px;
+        //*** solid 1px red;
     }
     
     .introLogo {
         display: flex;
         width: 50px;
         hegith: 50px;
-        border: solid 1px red;
+        //*** solid 1px red;
         
         img {
             width: 100%;
@@ -180,7 +189,7 @@ export const Musician = styled.div`
         display: flex;
         justify-content: center;
         // width: 500px;
-        border: solid 1px blue;
+        //*** solid 1px blue;
         box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
         rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
 
@@ -192,34 +201,36 @@ export const Musician = styled.div`
     
     div > img {
         margin: 5px;
-        width: 400px;
+        width: 500px;
         object-fit: cover;
     }
 
     .detail_comment {
         display: flex;
         flex-direction: column;
-        border: solid 1px red;
+        //*** solid 1px red;
         text-align: center;
+        margin-left: 0px;
     }
 
     .musician_comment {
-        border: solid 1px red;
+        //*** solid 1px red;
         display: flex;
         flex-direction: column;
         width: 500px;
         height: 300px;
+       
         
         p {
             margin-top: 25px;
-            font-size: 20px;
+            font-size: 30px;
         }
     }
 
     .portfolio_btn {
         display: flex;
         justify-content: center;
-        border: solid 1px red;
+        //*** solid 1px red;
         // position: relative;
         // top: 300px;
 
@@ -231,13 +242,13 @@ export const Concert = styled.div`
     display: flex;
     justify-content: center;
     // margin: 50px;
-    border: solid 1px red;
+    //*** solid 1px red;
     
 
     .concertInfo {
         display: flex;
         flex-direction: column;
-        border: solid 1px red;
+        //*** solid 1px red;
         text-align: center;
         width: 500px;
         margin: 10px;
@@ -251,7 +262,7 @@ export const Concert = styled.div`
     .introLogoDiv {
         display: flex;
         justify-content: center;
-        border: solid 1px red;
+        //*** solid 1px red;
         margin-bottom: 20px;
     }
     
@@ -259,7 +270,7 @@ export const Concert = styled.div`
         display: flex;
         width: 50px;
         hegith: 50px;
-        border: solid 1px red;
+        //*** solid 1px red;
         
         img {
             width: 100%;
@@ -304,6 +315,7 @@ function About() {
         <>
             <Header></Header>
             <AlignDiv>
+                <div>
                 <ContentWrapper>
                     <ImageTrans>
                         <div>
@@ -331,7 +343,9 @@ function About() {
                         <ValueImgDiv>
                         <BlackContentWrapper>
                             <ValueImg>
-                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941238520851341362/business-people_negative.png'></img>
+                                <div className='logo'>
+                                    <img src='https://cdn.discordapp.com/attachments/938684956916449330/941238520851341362/business-people_negative.png'></img>
+                                </div>
                                 <div className='title'>
                                     <h4>Connect</h4>
                                     <p>너와 내가 모여 <b>우리</b>가 되고,<br/>우리가 <b>나누는 문화(Culture Shargin)</b>을 통해 더 나은 사회로 <b>연결</b>됩니다.</p>
@@ -340,7 +354,9 @@ function About() {
                         </BlackContentWrapper>
                         <BlackContentWrapper>
                             <ValueImg>
-                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941238520499044352/orchestra_negative.png'></img>
+                                <div className='logo'>
+                                    <img src='https://cdn.discordapp.com/attachments/938684956916449330/941238520499044352/orchestra_negative.png'></img>
+                                </div>
                                 <div className='title'>
                                     <h4>Artist</h4>
                                     <p>잠재력 있는 아티스트를 발굴하여 국내 최초로 Culture Sharing을 기획 및 실행하고 있습니다.</p>
@@ -349,7 +365,9 @@ function About() {
                         </BlackContentWrapper>
                         <BlackContentWrapper>
                             <ValueImg>
-                                <img className='logo' src='https://cdn.discordapp.com/attachments/938684956916449330/941238521065267200/festival_negative.png'></img>
+                                <div className='logo'>
+                                    <img src='https://cdn.discordapp.com/attachments/938684956916449330/941238521065267200/festival_negative.png'></img>
+                                </div>
                                 <div className='title'>
                                     <h4>Culture Share</h4>
                                     <p>불난데 부채질의 Culture Sharing은 새로운 새상을 만들어가는 문화 브랜드로서 묻혀있는 인재를 발굴하고 지원합니다.</p>
@@ -399,7 +417,11 @@ function About() {
                             </div>
                             <h1><b>청춘</b>의 <b>열정</b>을 <b>응원</b>합니다.</h1>
                             <br/>
-                            <p>우리는 <b>청춘</b>들의 <b>열정을 응원</b>합니다.<br/><br/>우리가 실현하는 컬쳐 쉐어링을 통해<br/>청춘들의 열정에 불을 지피고<br/>그들의 꿈에 한발자국 더 다가갈 수 있도록<br/>응원합니다.</p>
+                            <p>우리는 <b>청춘</b>들의 <b>열정을 응원</b>합니다.<br/><br/>꿈있는 아티스트들읠 발굴하고<br/>이들의 이야기를 공연으로 연출하여 Culture Sharing을 이룹니다.
+                            <br/>
+                            <br/>
+                            청춘들의 열정에 불을 지피고<br/>그들의 꿈에 한발자국 더 다가갈 수 있도록<br/>응원합니다.</p>
+
                         </div>
                         <div className='concertImg'>
                             <div>
@@ -430,7 +452,7 @@ function About() {
                         
                     </Concert>
                 </ContentWrapper>
-
+                </div>
             </AlignDiv>
 
             <Footer></Footer>
