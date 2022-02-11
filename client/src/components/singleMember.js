@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MediaQuery } from "../GlobalStyle";
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -10,26 +11,10 @@ export const ContentWrapper = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
   border: 1px solid #f6f6f6;
   border-radius: 10px;
-`;
 
-export const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  padding: 30px;
-  background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
-  border: 1px solid #f6f6f6;
-  border-radius: 10px;
-  font-style: italic;
-  font-size: 17px;
-
-  div {
-    font-style: normal;
-    margin-top: 10px;
-    font-size: 15px;
-    color: #a29797;
+  ${MediaQuery.mobile} {
+    max-width: 370px;
+    padding: 10px;
   }
 `;
 
@@ -37,8 +22,6 @@ export const AllTeam = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* flex-direction: column; */
-  /* border: solid 1px red; */
   margin: 25px 20px 10px 20px;
 `;
 
@@ -47,7 +30,6 @@ export const Profile = styled.div`
   justify-content: center;
   width: 200px;
   height: 200px;
-  // border: solid 3px red;
   border-radius: 70%;
   overflow: hidden;
 
@@ -56,23 +38,36 @@ export const Profile = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
+  ${MediaQuery.mobile} {
+    width: 140px;
+    height: 140px;
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  /* border: solid 1px red; */
 `;
 
 export const Name = styled.div`
   display: flex;
-  /* flex-direction: column; */
   justify-content: right;
-  /* border: solid 1px red; */
+
+  div {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  ${MediaQuery.mobile} {
+    div {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const Career = styled.div`
-  /* border: solid 1px red; */
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -83,6 +78,14 @@ export const Career = styled.div`
     color: #a29797;
     margin-bottom: 0;
     font-size: 14px;
+  }
+
+  ${MediaQuery.mobile} {
+    font-size: 13px;
+
+    p {
+      font-size: 11px;
+    }
   }
 `;
 
@@ -109,14 +112,14 @@ function SingleMember({ data }) {
         </Profile>
         <Content>
           <Name>
-            <h5>
+            <div>
               {data.name}
               <span style={{ color: "#ee292f", fontWeight: "bold" }}>
                 {" "}
                 /{" "}
               </span>{" "}
               <span style={{ color: "#a29797" }}>{data.position}</span>
-            </h5>
+            </div>
           </Name>
           {/* <SubText>Minhyeong Lee</SubText> */}
           <Career>

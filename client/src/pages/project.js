@@ -31,7 +31,6 @@ export const MainDiv = styled.div`
   animation: 0.7s ease-in-out ${boxFade};
 
   ${MediaQuery.mobile} {
-    //768픽셀이하에서 CSS적용
     display: flex;
     flex-direction: column;
   }
@@ -58,7 +57,9 @@ export const TextWrapper = styled.div`
   }
 
   ${MediaQuery.mobile} {
-    width: 565px;
+    width: 370px;
+    font-size: 18px;
+    padding: 15px 30px 15px 30px;
   }
 `;
 
