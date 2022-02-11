@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from "react-bootstrap";
 import Layout from "./layout";
+import { boxFade, MediaQuery } from "../GlobalStyle";
 // Import css files
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -31,11 +32,12 @@ export const ImageTrans = styled.div`
     // : 1px solid red;
     width: 70%;
     heigth: 70%;
+    animation: 0.7s ease-in-out ${boxFade};
 
     img {
         width: 100%;
         height: 100%;
-        over-fit: cover;
+        object-fit: cover;
     }
 `;
 
@@ -51,6 +53,8 @@ export const ContentWrapper = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
   //*** 1px solid #f6f6f6;
   border-radius: 10px;
+  animation: 0.7s ease-in-out ${boxFade};
+
 `;
 
 export const BlackContentWrapper = styled.div`
@@ -61,7 +65,7 @@ export const BlackContentWrapper = styled.div`
   padding: 50px;
   margin-right: 25px;
   margin-left: 25px;
-  background-color: #433B39;
+  background-color: #4B4948;
   box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
   //*** 1px solid #f6f6f6;
@@ -73,9 +77,8 @@ export const TextArea = styled.div`
     display: flex;
     justify-content: center;
     margin-left: 20px;
-    
     flex-direction: column;
-    //*** solid 1px red;
+    animation: 0.7s ease-in-out ${boxFade};
 
     .introLogoDiv {
         display: flex;
@@ -105,7 +108,6 @@ export const TextArea = styled.div`
 
     .introContent {
         font-size: 20px;
-
     }
 `;
 
@@ -113,6 +115,7 @@ export const ValueList = styled.div`
     align-items: center;
     display: flex;
     flex-direction : column;
+    animation: 0.7s ease-in-out ${boxFade};
 
     .valueTitle {
         font-size: 30px;
@@ -134,15 +137,17 @@ export const ValueImg = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 0px;
+    animation: 0.7s ease-in-out ${boxFade};
     //*** solid 1px red;
 
     .logo {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         margin-bottom: 30px;
-        border: solid 1px red;
 
         img {
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
     }
@@ -161,6 +166,7 @@ export const Musician = styled.div`
     
     display: flex;
     justify-content: center;
+    animation: 0.7s ease-in-out ${boxFade};
     // align-items: center;
     //*** solid 1px red;
     // margin: 50px;
@@ -194,15 +200,13 @@ export const Musician = styled.div`
         rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
 
         img {
-            object-fit: scale-down;
+            margin: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
         }
         
-    }
-    
-    div > img {
-        margin: 5px;
-        width: 500px;
-        object-fit: cover;
     }
 
     .detail_comment {
@@ -210,7 +214,8 @@ export const Musician = styled.div`
         flex-direction: column;
         //*** solid 1px red;
         text-align: center;
-        margin-left: 0px;
+        margin-left: 50px;
+        margin-top: 100px;
     }
 
     .musician_comment {
@@ -223,7 +228,7 @@ export const Musician = styled.div`
         
         p {
             margin-top: 25px;
-            font-size: 30px;
+            font-size: 25px;
         }
     }
 
@@ -241,6 +246,7 @@ export const Musician = styled.div`
 export const Concert = styled.div`
     display: flex;
     justify-content: center;
+    animation: 0.7s ease-in-out ${boxFade};
     // margin: 50px;
     //*** solid 1px red;
     
@@ -252,11 +258,8 @@ export const Concert = styled.div`
         text-align: center;
         width: 500px;
         margin: 10px;
+        margin-top: 130px;
         font-size: 20px;
-
-        h1 {
-            font-size: 30px;
-        }
     }
 
     .introLogoDiv {
@@ -279,8 +282,10 @@ export const Concert = styled.div`
         }
     }
 
-    h1 {
-        font-size: 30px;
+    .concertContentDiv {
+        p {
+            font-size: 25px;
+        }
     }
 
     .concertImg {
@@ -288,7 +293,8 @@ export const Concert = styled.div`
         width: 500px;
         display: flex;
         flex-direction: row;
-        border : solid 1px red;
+        box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
         
     }
 
@@ -348,6 +354,8 @@ function About() {
                                 </div>
                                 <div className='title'>
                                     <h4>Connect</h4>
+                                </div>
+                                <div className='title'>
                                     <p>너와 내가 모여 <b>우리</b>가 되고,<br/>우리가 <b>나누는 문화(Culture Shargin)</b>을 통해 더 나은 사회로 <b>연결</b>됩니다.</p>
                                 </div>
                             </ValueImg>
@@ -359,6 +367,8 @@ function About() {
                                 </div>
                                 <div className='title'>
                                     <h4>Artist</h4>
+                                </div>
+                                <div className='title'>
                                     <p>잠재력 있는 아티스트를 발굴하여 국내 최초로 Culture Sharing을 기획 및 실행하고 있습니다.</p>
                                 </div>
                             </ValueImg>
@@ -370,6 +380,8 @@ function About() {
                                 </div>
                                 <div className='title'>
                                     <h4>Culture Share</h4>
+                                </div>
+                                <div className='title'>
                                     <p>불난데 부채질의 Culture Sharing은 새로운 새상을 만들어가는 문화 브랜드로서 묻혀있는 인재를 발굴하고 지원합니다.</p>
                                 </div>
                             </ValueImg>
@@ -394,7 +406,7 @@ function About() {
                             </div>
                             <div className='musician_comment'>
                                 <h1><b>아티스트</b>의 <b>가치를 발견</b>하다.</h1>
-                                <p>불난데 부채질은 아티스트분들을 지원합니다.<br/>그들의 재능이 사회에 빛을 발할 수 있도록 기획 및 연출하고,<br/> 그들의 이야기를 관객에게 전달합니다.</p>
+                                <p>불난데 부채질은 아티스트분들을 지원합니다.<br/>그들의 재능이 사회에 빛을 발할 수 있도록<br/>그들의 이야기를 공연으로 만들어<br/>관객에게 전달합니다.</p>
                             </div>
                             <div className='portfolioMove'>
                                 <div className='portfolio_btn'>
@@ -415,35 +427,36 @@ function About() {
                                     <img src='https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png'></img>
                                 </div>
                             </div>
-                            <h1><b>청춘</b>의 <b>열정</b>을 <b>응원</b>합니다.</h1>
-                            <br/>
-                            <p>우리는 <b>청춘</b>들의 <b>열정을 응원</b>합니다.<br/><br/>꿈있는 아티스트들읠 발굴하고<br/>이들의 이야기를 공연으로 연출하여 Culture Sharing을 이룹니다.
-                            <br/>
-                            <br/>
-                            청춘들의 열정에 불을 지피고<br/>그들의 꿈에 한발자국 더 다가갈 수 있도록<br/>응원합니다.</p>
-
+                            <div className='concertTitleDiv'>
+                                <h1><b>청춘</b>의 <b>열정</b>을 <b>응원</b>합니다.</h1>
+                            </div>
+                            <div className='concertContentDiv'>
+                                <p><br/>불난데 부채질의 <b>Culture Sharign</b>은
+                                <br/>
+                                청춘들의 열정에 불을 지피고<br/>그들의 꿈에 한발자국 더 다가갈 수 있도록<br/>응원합니다.</p>
+                            </div>
                         </div>
                         <div className='concertImg'>
                             <div>
                                 <div>
-                                    <Link to='portfolio/detail/1'>
+                                    <Link to='project/detail/1'>
                                         <img name='하늘에별따기' src="https://cdn.discordapp.com/attachments/938684956916449330/939322806498394192/bulbuConcert.jpg"></img>
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to='portfolio/detail/4'>
+                                    <Link to='project/detail/4'>
                                         <img name='1250project' src="https://media.discordapp.net/attachments/938684956916449330/939783195367444490/concert.2.jpeg"></img>
                                     </Link>
                                 </div>
                             </div>
                             <div>
                                 <div>
-                                    <Link to='portfolio/detail/3'>
+                                    <Link to='project/detail/3'>
                                         <img name='시즌'src="https://cdn.discordapp.com/attachments/938684956916449330/939783195673657364/concert1.jpeg"></img>
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to='portfolio/detail/2'>
+                                    <Link to='project/detail/2'>
                                         <img name='소통' src="https://cdn.discordapp.com/attachments/938684956916449330/939783196034359296/concert3.jpeg"></img>
                                     </Link>
                                 </div>
