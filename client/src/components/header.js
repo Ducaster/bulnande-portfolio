@@ -67,15 +67,15 @@ function Header() {
             Team
           </PathName>
         </Link>
-        <Link to="/portfolio">
+        <Link to="/project">
           <PathName
             className={
-              window.location.pathname.indexOf("/portfolio") !== -1
+              window.location.pathname.indexOf("/project") !== -1
                 ? "active"
                 : ""
             }
           >
-            Portfolio
+            Project
           </PathName>
         </Link>
         <Link to="/contact">

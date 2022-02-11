@@ -109,7 +109,7 @@ export const Content = styled.div`
   box-shadow: rgba(50, 50, 93, 0.2) 1px 1px 0px;
 `;
 
-function SinglePortfolio({ data }) {
+function SinglePortfolioShort({ data }) {
   const navigate = useNavigate();
 
   //디테일 페이지로 이동
@@ -137,8 +137,8 @@ function SinglePortfolio({ data }) {
             <Content>{data.title}</Content>
           </ContentBox>
           <ContentBox>
-            <ContentName>행사회차</ContentName>
-            <Content>{data.season}</Content>
+            <ContentName>행사일시</ContentName>
+            <Content>{data.date}</Content>
           </ContentBox>
           <ContentBox>
             <ContentName>행사분류</ContentName>
@@ -151,4 +151,4 @@ function SinglePortfolio({ data }) {
   );
 }
 
-export default SinglePortfolio;
+export default SinglePortfolioShort;

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Layout from "./layout";
+import emailjs from "@emailjs/browser";
 
 const boxFade = keyframes`
   0% {
@@ -29,7 +30,7 @@ export const MainDiv = styled.div`
 export const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 `;
 
 export const ContentWrapper = styled.div`
@@ -89,7 +90,12 @@ export const ContactDiv = styled.div`
   justify-content: center;
   flex-direction: column;
   /* width: 50%; */
-  /* height: 100%; */
+  /* height: 500px; */
+
+  .form-control {
+    width: 300px;
+    min-height: 35px;
+  }
 
   .contactForm {
     display: flex;
@@ -103,6 +109,7 @@ export const ContactDiv = styled.div`
     justify-content: center;
     font-size: 23px;
     font-weight: bold;
+    /* color: #ee292f; */
   }
 
   input {
@@ -113,7 +120,8 @@ export const ContactDiv = styled.div`
   .input-group-text {
     display: flex;
     flex-direction: column;
-    width: 80px;
+    width: 100px;
+    /* height: 50px; */
     font-size: 1.3vmin;
     justify-content: center;
   }
@@ -131,36 +139,39 @@ export const ContactDiv = styled.div`
     margin-bottom: 10px;
   }
 
-  // .contactForm > div {
-  //   width: 30px;
-  // }
-
   .submitBtn {
     display: flex;
     justify-content: center;
     /* border: solid 1px red; */
     margin: 30px;
+    /* width: 400px; */
+    /* font-size: 20px; */
   }
 `;
 
 function Contact() {
-  const [checkValue, setCheckValue] = useState(false);
-  const [email, setEmail] = useState("직접입력");
+  const form = useRef();
 
   //메일보내는 함수
-  const sendMessage = () => {
-    alert("문의 내용이 정상적으로 전달되었습니다.");
-  };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  //입력값 업데이트 함수
-  const inputValue = (e) => {
-    if (e.target.value === "직접입력") {
-      setCheckValue(true);
-      setEmail(e.target.value);
-    } else {
-      setCheckValue(false);
-      setEmail(e.target.value);
-    }
+    emailjs
+      .sendForm(
+        "service_h52sk4m",
+        "bulbu_contact",
+        form.current,
+        "user_8qHaapmo2rFmpMZ2GoV0k"
+      )
+      .then(
+        (result) => {
+          alert("문의 내용이 정상적으로 전달되었습니다.");
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -177,84 +188,58 @@ function Contact() {
           <MainWrapper>
             <ContentWrapper>
               <ContactDiv>
-                <div className="title">Contact us</div>
+                <div className="title">Contact Us</div>
               </ContactDiv>
             </ContentWrapper>
             <ContentWrapper>
               <ContactDiv>
                 <div className="contactForm">
-                  <form onSubmit={(e) => e.preventDefault()}>
+                  <form ref={form} onSubmit={sendEmail}>
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon3">
-                        Nickname
-                      </span>
+                      <label class="input-group-text" id="basic-addon3">
+                        Name
+                      </label>
                       <input
-                        type="text"
                         class="form-control"
                         id="basic-url"
                         aria-describedby="basic-addon3"
+                        type="text"
+                        name="name"
                       />
                     </div>
                     <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon3">
+                      <label class="input-group-text" id="basic-addon3">
                         Email
-                      </span>
+                      </label>
                       <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Username"
-                        aria-label="Username"
-                      />
-                      <span class="span input-group-text">@</span>
-                      {checkValue ? (
-                        <input
-                          type="text"
-                          class="form-control"
-                          placeholder={email}
-                          aria-label="Server"
-                          value=" "
-                        />
-                      ) : (
-                        <input type="text" class="form-control" value={email} />
-                      )}
-                      <select
-                        class="form-select"
-                        aria-label="Default select example"
-                        onChange={(e) => inputValue(e)}
-                      >
-                        <option selected>--메일주소선택--</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="naver.com">naver.com</option>
-                        <option>직접입력</option>
-                      </select>
-                    </div>
-                    <div class="input-group mb-3">
-                      <span class="input-group-text" id="basic-addon3">
-                        Title
-                      </span>
-                      <input
-                        type="text"
                         class="form-control"
                         id="basic-url"
                         aria-describedby="basic-addon3"
+                        type="email"
+                        name="email"
+                      />
+                    </div>
+                    <div class="input-group mb-3">
+                      <label class="input-group-text">Title</label>
+                      <input
+                        class="form-control"
+                        id="basic-url"
+                        aria-describedby="basic-addon3"
+                        type="text"
+                        name="title"
                       />
                     </div>
                     <div class="input-group">
-                      <span class="input-group-text">Message</span>
+                      <label class="input-group-text">Message</label>
                       <textarea
                         class="form-control"
                         aria-label="With textarea"
                         cols="1"
-                      ></textarea>
+                        name="message"
+                      />
                     </div>
                     <div className="submitBtn">
-                      <button
-                        type="submit"
-                        class="btn btn-dark"
-                        onClick={sendMessage}
-                      >
-                        Send
-                      </button>
+                      <input class="btn btn-dark" type="submit" value="Send" />
                     </div>
                   </form>
                 </div>

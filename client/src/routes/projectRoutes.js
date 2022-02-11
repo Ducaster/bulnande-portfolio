@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import SinglePortfolioDetail from "../components/singlePortfolioDetail";
-import Portfolio from "../pages/portfolio";
+import Project from "../pages/project";
+// import Portfolio from "../pages/project";
 
-function PortfolioRoute() {
+function ProjectRoute() {
   return (
     <Routes>
-      <Route path="/" element={<Portfolio />} />
+      <Route path="/" element={<Project />} />
       <Route path="/detail/:id" element={<SinglePortfolioDetail />} />
     </Routes>
   );
 }
 
-export default PortfolioRoute;
+export default ProjectRoute;

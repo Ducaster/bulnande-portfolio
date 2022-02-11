@@ -81,8 +81,8 @@ function Footer() {
           <Link to="/team">
             <PathName onClick={handleTop}>Team</PathName>
           </Link>
-          <Link to="/portfolio">
-            <PathName onClick={handleTop}>Portfolio</PathName>
+          <Link to="/project">
+            <PathName onClick={handleTop}>Project</PathName>
           </Link>
           <Link to="/contact">
             <PathName onClick={handleTop}>Contact</PathName>
