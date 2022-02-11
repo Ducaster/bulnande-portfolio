@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { MediaQuery } from "../GlobalStyle";
 
 export const MainDiv = styled.div`
   background-color: #2f2f2f;
@@ -14,21 +15,18 @@ export const FooterDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* text-align: center; */
-  /* font-size: 15px; */
-  /* color: #3b3b3b; */
   border: none;
-
   height: 120px;
   color: white;
+
+  ${MediaQuery.mobile} {
+    width: 360px;
+    height: 80px;
+  }
 `;
 
 export const Left = styled.div`
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: right; */
   flex: 1 0 auto;
-  /* padding-left: 50px; */
 
   img {
     width: 150px;
@@ -36,6 +34,15 @@ export const Left = styled.div`
 
   div {
     font-size: 11px;
+  }
+
+  ${MediaQuery.mobile} {
+    img {
+      width: 100px;
+    }
+    div {
+      display: none;
+    }
   }
 `;
 
@@ -53,6 +60,12 @@ export const Right = styled.div`
   }
   a:hover {
     text-decoration: underline;
+  }
+
+  ${MediaQuery.mobile} {
+    a {
+      font-size: 11px;
+    }
   }
 `;
 

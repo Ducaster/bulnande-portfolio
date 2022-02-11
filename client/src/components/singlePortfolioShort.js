@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
+import { MediaQuery } from "../GlobalStyle";
 
 export const textAciton = keyframes`
   0% {
@@ -25,6 +26,12 @@ export const MainDiv = styled.div`
   padding: 40px 0px 40px 0px;
   border: 1px solid #f6f6f6;
   border-radius: 10px;
+
+  ${MediaQuery.mobile} {
+    padding: 20px 0px 20px 0px;
+    width: 370px;
+    height: 450px;
+  }
 `;
 
 export const MainTitle = styled.div`
@@ -37,6 +44,11 @@ export const MainTitle = styled.div`
 
   :hover {
     color: #ee292f;
+  }
+
+  ${MediaQuery.mobile} {
+    margin-left: 40px;
+    font-size: 17px;
   }
 `;
 
@@ -65,6 +77,16 @@ export const ContentWarpper = styled.div`
   img:hover {
     transform: scale(1.05) translateY(-5px);
   }
+
+  ${MediaQuery.mobile} {
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin: 0px 0px 10px 0px;
+      width: 285px;
+    }
+  }
 `;
 
 export const ContentDiv = styled.div`
@@ -73,11 +95,8 @@ export const ContentDiv = styled.div`
   justify-content: center;
   margin-right: 30px;
 
-  .right {
-    /* margin-right: 30px; */
-  }
-
-  .left {
+  ${MediaQuery.mobile} {
+    align-items: center;
     margin-right: 0px;
   }
 `;
@@ -107,6 +126,10 @@ export const Content = styled.div`
   margin: 3px;
   font-size: 12px;
   box-shadow: rgba(50, 50, 93, 0.2) 1px 1px 0px;
+
+  ${MediaQuery.mobile} {
+    width: 200px;
+  }
 `;
 
 function SinglePortfolioShort({ data }) {
@@ -115,7 +138,7 @@ function SinglePortfolioShort({ data }) {
   //디테일 페이지로 이동
   const moveToDetail = (id) => {
     handleTop();
-    navigate(`/project/detail/${id}`);
+    navigate(`/project/sdetail/${id}`);
   };
 
   // 클릭하면 스크롤이 위로 올라가는 함수

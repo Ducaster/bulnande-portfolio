@@ -2,6 +2,7 @@ import { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import Layout from "./layout";
 import emailjs from "@emailjs/browser";
+import { MediaQuery } from "../GlobalStyle";
 
 const boxFade = keyframes`
   0% {
@@ -19,12 +20,20 @@ export const MainContainer = styled.div`
   gap: 20px;
   height: 650px;
   animation: 0.7s ease-in-out ${boxFade};
+  ${MediaQuery.mobile} {
+    height: auto;
+  }
 `;
 
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 
 export const MainWrapper = styled.div`
@@ -44,6 +53,10 @@ export const ContentWrapper = styled.div`
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
   border: 1px solid #f6f6f6;
   border-radius: 10px;
+
+  ${MediaQuery.mobile} {
+    width: 370px;
+  }
 `;
 
 const TextWrapper = styled.div`
@@ -63,6 +76,16 @@ const TextWrapper = styled.div`
     margin: 0px;
     font-size: 16px;
     font-weight: bold;
+    align-items: none;
+  }
+
+  ${MediaQuery.mobile} {
+    width: 370px;
+    align-items: start;
+
+    p {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -77,11 +100,9 @@ export const ImgDiv = styled.div`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
 
-  img {
-    /* height: 100%; */
-    /* overflow: hidden; */
-    /* height: 100%; */
-    /* over-fit: cover; */
+  ${MediaQuery.mobile} {
+    margin-left: 0px;
+    width: 370px;
   }
 `;
 
@@ -89,8 +110,6 @@ export const ContactDiv = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* width: 50%; */
-  /* height: 500px; */
 
   .form-control {
     width: 300px;
@@ -109,7 +128,6 @@ export const ContactDiv = styled.div`
     justify-content: center;
     font-size: 23px;
     font-weight: bold;
-    /* color: #ee292f; */
   }
 
   input {
@@ -121,12 +139,10 @@ export const ContactDiv = styled.div`
     display: flex;
     flex-direction: column;
     width: 100px;
-    /* height: 50px; */
     font-size: 1.3vmin;
     justify-content: center;
   }
   .span {
-    /* display: inline-block; */
     width: 20px;
     text-align: center;
   }
@@ -142,10 +158,13 @@ export const ContactDiv = styled.div`
   .submitBtn {
     display: flex;
     justify-content: center;
-    /* border: solid 1px red; */
     margin: 30px;
-    /* width: 400px; */
-    /* font-size: 20px; */
+  }
+
+  ${MediaQuery.mobile} {
+    .title {
+      font-size: 18px;
+    }
   }
 `;
 

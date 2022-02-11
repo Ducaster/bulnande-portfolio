@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { MediaQuery } from "../GlobalStyle";
 
 export const Background = styled.div`
   background-color: #2f2f2f;
@@ -18,6 +19,12 @@ export const HeaderStyle = styled.div`
     margin: 10px;
     /* height: 40px; */
   }
+
+  ${MediaQuery.mobile} {
+    img {
+      width: 170px;
+    }
+  }
 `;
 
 export const Navbar = styled.div`
@@ -31,11 +38,16 @@ export const Navbar = styled.div`
   }
 
   a {
+    /* cursor: pointer; */
     color: white;
     text-decoration: none;
   }
   a:hover {
     color: #ee292f;
+  }
+
+  ${MediaQuery.mobile} {
+    font-size: 13px;
   }
 `;
 

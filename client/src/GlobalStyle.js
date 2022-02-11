@@ -9,7 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 const LAYOUT_BREAK_POINT = {
-  MOBILE: 768,
+  MOBILE: 450,
+  MIDDLE: 768,
   MAC: 1440,
 };
 

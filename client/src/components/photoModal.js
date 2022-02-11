@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const MainDiv = styled.div`
-  background-color: rgba(58, 58, 58, 0.3);
+  background-color: rgba(58, 58, 58, 0.4);
   position: fixed;
   top: 0%;
   left: 0%;
