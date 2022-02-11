@@ -90,7 +90,7 @@ export const ContentName = styled.div`
 `;
 
 export const Content = styled.div`
-  max-width: 190px;
+  max-width: 187px;
   background-color: #f6f6f6;
   border-radius: 5px;
   padding: 10px;
@@ -165,6 +165,14 @@ function SinglePortfolioDetail() {
                 <ContentName>행사분류</ContentName>
                 <Content>{data[0].category}</Content>
               </ContentBox>
+              {data[0].season ? (
+                <ContentBox>
+                  <ContentName>행사회차</ContentName>
+                  <Content>{data[0].season}</Content>
+                </ContentBox>
+              ) : (
+                ""
+              )}
               <ContentBox>
                 <ContentName>공연자</ContentName>
                 <Content>{data[0].performer}</Content>
