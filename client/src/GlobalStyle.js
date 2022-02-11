@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, keyframes } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -22,3 +22,26 @@ export const MediaQuery = {
   mobile: createMediaQuery(LAYOUT_BREAK_POINT.MOBILE),
   mac: createMediaQuery(LAYOUT_BREAK_POINT.MAC),
 };
+
+export const textAction = keyframes`
+  0% {
+    color :black;
+  }
+  60%{
+    color : #ee292f;
+  }
+  100%{
+    color : black;
+}
+`;
+
+export const boxFade = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;

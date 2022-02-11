@@ -1,17 +1,8 @@
 import { useRef } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import Layout from "./layout";
 import emailjs from "@emailjs/browser";
-import { MediaQuery } from "../GlobalStyle";
-
-const boxFade = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`;
+import { boxFade, MediaQuery } from "../GlobalStyle";
 
 export const MainContainer = styled.div`
   display: flex;

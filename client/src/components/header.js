@@ -38,7 +38,6 @@ export const Navbar = styled.div`
   }
 
   a {
-    /* cursor: pointer; */
     color: white;
     text-decoration: none;
   }
