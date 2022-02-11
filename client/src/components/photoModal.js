@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MediaQuery } from "../GlobalStyle";
 
 const MainDiv = styled.div`
   background-color: rgba(58, 58, 58, 0.4);
@@ -22,6 +23,10 @@ const MainDiv = styled.div`
 
 const Photo = styled.img`
   width: 1000px;
+
+  ${MediaQuery.mobile} {
+    width: 350px;
+  }
 `;
 
 function PhotoModal({ handleOpenPhoto, data, idx }) {

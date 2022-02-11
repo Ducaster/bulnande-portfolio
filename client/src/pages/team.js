@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import { MainDiv } from "../components/detail.style";
 import SingleMember from "../components/singleMember";
-import { MainDiv } from "../components/singlePortfolioDetail";
 import { teamMember } from "../data/teamMember";
 import { MediaQuery } from "../GlobalStyle";
 import Layout from "./layout";

@@ -21,7 +21,6 @@ export const dummydataShort = [
     performer: "시즌, 위션",
     category: "공연",
     desc: "커먼그라운드에서 진행한 불난데부채질의 야외 공연&버스킹",
-    video: "https://www.youtube.com/embed/rnLDl0ZE5i0",
     photo: [
       "https://cdn.discordapp.com/attachments/938684956916449330/941198256132739102/photo_2022-02-10_14.05.38.jpeg",
     ],
