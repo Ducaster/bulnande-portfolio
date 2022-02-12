@@ -18,6 +18,10 @@ export const ContentWrapper = styled.div`
   border: 1px solid #f6f6f6;
   border-radius: 10px;
 
+  ${MediaQuery.tablet} {
+    width: 565px;
+  }
+
   ${MediaQuery.mobile} {
     padding: 30px;
     width: 370px;
@@ -45,16 +49,18 @@ export const SubDiv = styled.div`
   justify-content: center;
 
   img {
-    width: 500px;
+    max-width: 500px;
     border-radius: 15px;
     box-shadow: rgba(50, 50, 93, 1) 0px 10px 10px -10x;
   }
   img:hover {
   }
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.tablet} {
     flex-direction: column;
+  }
 
+  ${MediaQuery.mobile} {
     img {
       width: 310px;
     }
@@ -92,13 +98,18 @@ export const ContentName = styled.div`
 `;
 
 export const Content = styled.div`
-  max-width: 187px;
+  width: 187px;
   background-color: #f6f6f6;
   border-radius: 5px;
   padding: 10px;
   margin: 3px;
   font-size: 14px;
   box-shadow: rgba(50, 50, 93, 0.2) 1px 1px 0px;
+
+  ${MediaQuery.tablet} {
+    max-width: 450px;
+    width: 370px;
+  }
 
   ${MediaQuery.mobile} {
     width: 210px;
@@ -117,6 +128,13 @@ export const VideoWrapper = styled.div`
   display: flex;
   justify-content: center;
 
+  ${MediaQuery.tablet} {
+    iframe {
+      width: 512px;
+      height: 288px;
+    }
+  }
+
   ${MediaQuery.mobile} {
     iframe {
       width: 336px;
@@ -134,9 +152,14 @@ export const Photos = styled.div`
     width: 180px;
   }
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.tablet} {
     grid-template-columns: 1fr 1fr;
+    img {
+      width: 230px;
+    }
+  }
 
+  ${MediaQuery.mobile} {
     img {
       width: 150px;
     }

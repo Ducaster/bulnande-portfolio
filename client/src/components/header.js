@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { MediaQuery } from "../GlobalStyle";
+import { baseBlack, MediaQuery, pointColor } from "../GlobalStyle";
 
 export const Background = styled.div`
-  background-color: #2f2f2f;
+  background-color: ${baseBlack};
   padding: 10px;
 `;
 export const HeaderStyle = styled.div`
@@ -42,7 +42,7 @@ export const Navbar = styled.div`
     text-decoration: none;
   }
   a:hover {
-    color: #ee292f;
+    color: ${pointColor};
   }
 
   ${MediaQuery.mobile} {
@@ -60,7 +60,10 @@ function Header() {
     <Background>
       <HeaderStyle>
         <Link to="/">
-          <img src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png" />
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png"
+            alt=""
+          />
         </Link>
       </HeaderStyle>
       <Navbar>

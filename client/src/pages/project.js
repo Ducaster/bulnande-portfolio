@@ -41,6 +41,10 @@ export const SearchBar = styled.div`
     outline: 2px solid ${pointColor};
   }
 
+  ${MediaQuery.middle} {
+    width: 565px;
+  }
+
   ${MediaQuery.mobile} {
     width: 370px;
     padding: 5px 20px 5px 20px;
@@ -59,7 +63,7 @@ export const MainDiv = styled.div`
   margin-bottom: 20px;
   gap: 20px;
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.middle} {
     display: flex;
     flex-direction: column;
   }
@@ -90,6 +94,10 @@ export const TextWrapper = styled.div`
     color: #a29797;
   }
 
+  ${MediaQuery.middle} {
+    width: 565px;
+  }
+
   ${MediaQuery.mobile} {
     width: 370px;
     font-size: 18px;
@@ -102,10 +110,13 @@ export const TextWrapper = styled.div`
 `;
 
 function Project() {
+  //장기프로젝트 데이터 상태
   const [data, setData] = useState(dummydata);
+
+  //단기프로젝트 데이터 상태
   const [shortData, setShortData] = useState(dummydataShort);
 
-  //제목으로 검색하는 함수
+  //프로젝트명으로 검색하는 함수
   const handlSearch = (e) => {
     let filtered = dummydata.filter((el) => {
       return el.title.indexOf(e.target.value) !== -1;

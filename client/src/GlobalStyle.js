@@ -8,21 +8,28 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+//미디어쿼리 기준 설정
 const LAYOUT_BREAK_POINT = {
   MOBILE: 450,
-  MIDDLE: 768,
+  TABLET: 900,
+  MIDDLE: 1150,
   MAC: 1440,
 };
 
+//미디어쿼리 생성 함수
 const createMediaQuery = (mediaPx) => {
   return `@media(max-width: ${mediaPx}px)`;
 };
 
+//미디어쿼리 생성
 export const MediaQuery = {
   mobile: createMediaQuery(LAYOUT_BREAK_POINT.MOBILE),
+  tablet: createMediaQuery(LAYOUT_BREAK_POINT.TABLET),
+  middle: createMediaQuery(LAYOUT_BREAK_POINT.MIDDLE),
   mac: createMediaQuery(LAYOUT_BREAK_POINT.MAC),
 };
 
+//색상 바뀌는 애니메이션
 export const textAction = keyframes`
   0% {
     color :black;
@@ -35,6 +42,7 @@ export const textAction = keyframes`
 }
 `;
 
+//페이드되는 애니메이션
 export const boxFade = keyframes`
   0% {
     opacity: 0;
@@ -44,6 +52,7 @@ export const boxFade = keyframes`
   }
 `;
 
+//움직이면서 페이드인되는 애니메이션
 export const boaxFadeMove = keyframes`
   0% {
     opacity: 0;
@@ -55,4 +64,7 @@ export const boaxFadeMove = keyframes`
   }
 `;
 
+//베이스색상
+export const baseBlack = "#2f2f2f";
 export const pointColor = "#ee292f";
+export const background = "#f6f6f6;";

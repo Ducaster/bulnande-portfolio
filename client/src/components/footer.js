@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { MediaQuery } from "../GlobalStyle";
+import { baseBlack, MediaQuery } from "../GlobalStyle";
 
 export const MainDiv = styled.div`
-  background-color: #2f2f2f;
+  background-color: ${baseBlack};
   margin: 0;
   display: flex;
   justify-content: center;
@@ -50,11 +50,10 @@ export const Right = styled.div`
   display: flex;
   gap: 10px;
   justify-content: right;
-  /* padding-right: 50px; */
   flex: 1 0 auto;
   font-size: 13px;
+
   a {
-    /* margin-top: 40px; */
     text-decoration: none;
     color: white;
   }
@@ -84,7 +83,10 @@ function Footer() {
     <MainDiv>
       <FooterDiv>
         <Left>
-          <img src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png" />
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png"
+            alt=""
+          />
           <div>Copyright © 2015-2020, Bulnande All Rights Reserved.</div>
         </Left>
         <Right>

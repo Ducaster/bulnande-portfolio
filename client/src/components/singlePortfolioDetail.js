@@ -14,7 +14,7 @@ import {
   SubDiv,
   Text,
   VideoWrapper,
-} from "./detail.style";
+} from "../style/detail.style";
 import PhotoModal from "./photoModal";
 
 function SinglePortfolioDetail() {
@@ -38,9 +38,7 @@ function SinglePortfolioDetail() {
 
   //더미에서 데이터 추출
   const data = dummydata.filter((el) => {
-    if (el.id == params.id) {
-      return el;
-    }
+    return el.id === Number(params.id);
   });
 
   return (
