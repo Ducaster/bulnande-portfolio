@@ -8,7 +8,7 @@ import {
   MainDiv,
   MainTitle,
   SeeMore,
-} from "./project.style";
+} from "../style/project.style";
 
 function SinglePortfolio({ data }) {
   const navigate = useNavigate();

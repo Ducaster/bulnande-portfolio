@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MainDiv } from "../components/detail.style";
+import { MainDiv } from "../style/detail.style";
 import SingleMember from "../components/singleMember";
 import { teamMember } from "../data/teamMember";
 import { MediaQuery } from "../GlobalStyle";

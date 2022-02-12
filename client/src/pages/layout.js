@@ -1,21 +1,20 @@
 import styled from "styled-components";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import { background } from "../GlobalStyle";
 
 export const MainWrapper = styled.div`
   size: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f6f6f6;
+  background-color: ${background};
   gap: 25px;
 `;
 
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
-  /* min-height: 800px; */
-  /* background-color: #f8f8f8; */
 `;
 
 function Layout({ children, title }) {

@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
   gap: 20px;
   height: 650px;
   animation: 0.7s ease-in-out ${boxFade};
-  ${MediaQuery.mobile} {
+  ${MediaQuery.middle} {
     height: auto;
   }
 `;
@@ -21,7 +21,7 @@ export const MainDiv = styled.div`
   justify-content: center;
   align-items: center;
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.middle} {
     flex-direction: column;
     gap: 15px;
   }
@@ -70,6 +70,11 @@ const TextWrapper = styled.div`
     align-items: none;
   }
 
+  ${MediaQuery.middle} {
+    width: 600px;
+    align-items: start;
+  }
+
   ${MediaQuery.mobile} {
     width: 370px;
     align-items: start;
@@ -91,8 +96,12 @@ export const ImgDiv = styled.div`
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
 
-  ${MediaQuery.mobile} {
+  ${MediaQuery.middle} {
+    width: 600px;
     margin-left: 0px;
+  }
+
+  ${MediaQuery.mobile} {
     width: 370px;
   }
 `;
@@ -257,7 +266,10 @@ function Contact() {
             </ContentWrapper>
           </MainWrapper>
           <ImgDiv>
-            <img src="https://cdn.discordapp.com/attachments/938684956916449330/941196311561125889/photo_2022-02-10_13.57.46.jpeg"></img>
+            <img
+              src="https://cdn.discordapp.com/attachments/938684956916449330/941196311561125889/photo_2022-02-10_13.57.46.jpeg"
+              alt=""
+            />
           </ImgDiv>
         </MainDiv>
       </MainContainer>

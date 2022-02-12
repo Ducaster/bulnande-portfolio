@@ -67,7 +67,7 @@ export const Name = styled.div`
   }
 `;
 
-export const Career = styled.div`
+export const SubContent = styled.div`
   display: flex;
   flex-direction: column;
   text-align: right;
@@ -121,17 +121,16 @@ function SingleMember({ data }) {
               <span style={{ color: "#a29797" }}>{data.position}</span>
             </div>
           </Name>
-          {/* <SubText>Minhyeong Lee</SubText> */}
-          <Career>
-            Career
-            {data.career.map((el, idx) => {
+          <SubContent>
+            Works
+            {data.works.map((el, idx) => {
               return <p key={idx}>{el}</p>;
             })}
-          </Career>
-          <Career>
+          </SubContent>
+          <SubContent>
             Contact
             <p>{data.email}</p>
-          </Career>
+          </SubContent>
         </Content>
       </AllTeam>
       <ImageWarpper>
