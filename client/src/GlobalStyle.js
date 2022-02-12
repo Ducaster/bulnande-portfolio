@@ -38,6 +38,15 @@ export const textAction = keyframes`
 export const boxFade = keyframes`
   0% {
     opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+export const boaxFadeMove = keyframes`
+  0% {
+    opacity: 0;
     transform: translateY(15px);
   }
   100% {
@@ -45,3 +54,5 @@ export const boxFade = keyframes`
     transform: translateY(0px);
   }
 `;
+
+export const pointColor = "#ee292f";

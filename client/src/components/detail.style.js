@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { boxFade, MediaQuery, textAction } from "../GlobalStyle";
+import { boaxFadeMove, MediaQuery, textAction } from "../GlobalStyle";
 
 export const MainDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  animation: 0.6s ease-in-out ${boxFade};
+  animation: 0.6s ease-in-out ${boaxFadeMove};
 `;
 
 export const ContentWrapper = styled.div`
