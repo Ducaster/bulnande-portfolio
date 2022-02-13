@@ -2,20 +2,14 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import styled from "styled-components";
-import arrowIcon from "../_images/arrow-right.png";
-import logo from '../_images/logo.png';
-import humanLogo from '../_images/human.png';
 import {Link} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button} from "react-bootstrap";
 import Layout from "./layout";
 import { boxFade, MediaQuery } from "../GlobalStyle";
-// Import css files
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// Slick import
+import ImageSlider from "../components/slider";
 import React, { Component } from "react";
-// import Slider from "react-slick";
+
 
 
 
@@ -325,8 +319,11 @@ function About() {
                 <ContentWrapper>
                     <ImageTrans>
                         <div>
-                            <img src='https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg'></img>
+                            <ImageSlider/>
                         </div>
+                        {/* <div>
+                            <img src='https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg'></img>
+                        </div> */}
                     </ImageTrans>
                     <TextArea>
                         <div className='introLogoDiv'>
