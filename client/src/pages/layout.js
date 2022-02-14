@@ -15,6 +15,7 @@ export const MainWrapper = styled.div`
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 150px;
 `;
 
 function Layout({ children, title }) {
