@@ -9,13 +9,14 @@ export const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${background};
-  gap: 25px;
+  /* gap: 25px; */
 `;
 
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 110px;
+  /* margin-bottom: 15px; */
 `;
 
 function Layout({ children, title }) {

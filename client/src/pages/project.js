@@ -12,6 +12,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   gap: 15px;
   animation: 0.7s ease-in-out ${boxFade};
+  margin: 35px 0px 25px 0px;
 `;
 
 export const SearchBar = styled.div`
