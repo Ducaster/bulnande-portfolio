@@ -7,6 +7,7 @@ export const MainDiv = styled.div`
   align-items: center;
   gap: 30px;
   animation: 0.6s ease-in-out ${boaxFadeMove};
+  margin: 50px 0px 40px 0px;
 `;
 
 export const ContentWrapper = styled.div`

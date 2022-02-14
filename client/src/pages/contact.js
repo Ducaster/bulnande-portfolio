@@ -11,6 +11,8 @@ export const MainContainer = styled.div`
   gap: 20px;
   height: 650px;
   animation: 0.7s ease-in-out ${boxFade};
+  margin: 25px 0px 25px 0px;
+
   ${MediaQuery.middle} {
     height: auto;
   }
