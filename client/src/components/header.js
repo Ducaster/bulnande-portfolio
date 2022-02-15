@@ -116,18 +116,14 @@ function Header() {
             About us
           </PathName>
         </Link>
-        <Link
-          to="/team"
-          onMouseOver={() => setTeamDropDown(true)}
-          // onMouseOut={() => setTeamDropDown(false)}
-        >
+        <Link to="/team">
           <PathName
             className={
               window.location.pathname.indexOf("/team") !== -1 ? "active" : ""
             }
           >
             Team
-            {teamDropDown ? (
+            {/* {teamDropDown ? (
               <>
                 <TeamDropDown />
                 <DropdownBackGround
@@ -136,7 +132,7 @@ function Header() {
               </>
             ) : (
               ""
-            )}
+            )} */}
           </PathName>
         </Link>
         <Link to="/project">

@@ -5,6 +5,7 @@ import AboutFirst from "../components/about/first";
 import AboutSecond from "../components/about/second";
 import AboutThird from "../components/about/third";
 import AboutFourth from "../components/about/fourth";
+import Fade from "@stahl.luke/react-reveal/Fade";
 
 export const AlignDiv = styled.div`
   display: flex;
