@@ -6,11 +6,11 @@ export const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 630px;
+  height: 700px;
   flex-direction: column;
   /* padding: 50px; */
   animation: 0.7s ease-in-out ${boxFade};
-  background-image: url("https://cdn.discordapp.com/attachments/938684956916449330/941198256132739102/photo_2022-02-10_14.05.38.jpeg");
+  background-image: url("https://cdn.discordapp.com/attachments/938684956916449330/943107159523221524/pexels-josh-sorenson-976862.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   .introLogoDiv {
@@ -92,15 +92,15 @@ export default function AboutFirst() {
       <TextArea>
         <div className="introTitle">
           <p>
-            <b>불난데 부채질</b>은<br />
-            세상을 바꾸는 문화기업입니다.
+            <b>불난데 부채질</b>은 <b>문화의 힘</b>을 <br />
+            믿는 사람들이 만들어 갑니다.
           </p>
         </div>
         <div className="introContent">
           <p>
-            우리는 사회적 기업으로서,
+            우리는 세상을 더 나은 곳으로 만들고 싶은
             <br />
-            문화를 사랑하는 많은 청춘들과 함께 성장하고 있습니다.
+            문화를 사랑하는 많은 청춘들과 함께합니다.
           </p>
         </div>
       </TextArea>
