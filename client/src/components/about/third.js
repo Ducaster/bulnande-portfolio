@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { boxFade } from "../../GlobalStyle";
+import { boxFade, MediaQuery } from "../../GlobalStyle";
 import ImageSlider from "../slider";
 import Fade from "@stahl.luke/react-reveal/Fade";
 
@@ -12,6 +12,11 @@ export const ContentWrapper = styled.div`
   animation: 0.7s ease-in-out ${boxFade};
   background-color: white;
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    height: 600px;
+    padding: 40px 0px 40px 0px;
+  }
 `;
 
 export const Musician = styled.div`
@@ -19,7 +24,6 @@ export const Musician = styled.div`
   justify-content: center;
   align-items: center;
   animation: 0.7s ease-in-out ${boxFade};
-  /* margin-bottom: 10px; */
 
   .introLogoDiv {
     display: flex;
@@ -32,7 +36,6 @@ export const Musician = styled.div`
     display: flex;
     width: 50px;
     height: 50px;
-    //*** solid 1px red;
 
     img {
       width: 100%;
@@ -58,13 +61,11 @@ export const Musician = styled.div`
   .detail_comment {
     display: flex;
     flex-direction: column;
-    //*** solid 1px red;
     text-align: center;
     margin-bottom: 30px;
   }
 
   .musician_comment {
-    //*** solid 1px red;
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -82,7 +83,24 @@ export const Musician = styled.div`
   .portfolio_btn {
     display: flex;
     justify-content: center;
-    //*** solid 1px red;
+  }
+
+  ${MediaQuery.mobile} {
+    flex-direction: column;
+    padding: 30px 0px 30px 0px;
+
+    .musician_comment {
+      width: 250px;
+
+      .title {
+        font-size: 20px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    }
   }
 `;
 

@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { boxFade } from "../../GlobalStyle";
-// import ImageSlider from "../slider";
+import { boxFade, MediaQuery } from "../../GlobalStyle";
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -8,11 +7,11 @@ export const ContentWrapper = styled.div`
   align-items: center;
   height: 700px;
   flex-direction: column;
-  /* padding: 50px; */
   animation: 0.7s ease-in-out ${boxFade};
   background-image: url("https://cdn.discordapp.com/attachments/938684956916449330/943107159523221524/pexels-josh-sorenson-976862.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
   .introLogoDiv {
     display: flex;
     justify-content: center;
@@ -34,15 +33,15 @@ export const ContentWrapper = styled.div`
       object-fit: contain;
     }
   }
+
+  ${MediaQuery.mobile} {
+    height: 680px;
+  }
 `;
 
 export const ImageTrans = styled.div`
   display: flex;
   justify-content: center;
-  // background-color: #6581A6;
-  // : 1px solid red;
-  /* width: 70%;
-  height: 70%; */
   animation: 0.7s ease-in-out ${boxFade};
 
   img {
@@ -55,7 +54,6 @@ export const ImageTrans = styled.div`
 export const TextArea = styled.div`
   display: flex;
   justify-content: center;
-  /* margin-left: 20px; */
   margin-bottom: 30px;
   flex-direction: column;
   animation: 0.7s ease-in-out ${boxFade};
@@ -66,12 +64,21 @@ export const TextArea = styled.div`
 
   .introTitle {
     font-size: 28px;
-    /* color: black; */
-    // text-align: center;
   }
 
   .introContent {
     font-size: 18px;
+  }
+
+  ${MediaQuery.mobile} {
+    padding: 0px 30px 0px 30px;
+    .introTitle {
+      font-size: 22px;
+    }
+
+    .introContent {
+      font-size: 14px;
+    }
   }
 `;
 

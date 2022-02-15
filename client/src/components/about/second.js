@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { boxFade } from "../../GlobalStyle";
+import { boxFade, MediaQuery } from "../../GlobalStyle";
 import Fade from "@stahl.luke/react-reveal/Fade";
 
 export const ContentWrapper = styled.div`
@@ -9,6 +9,10 @@ export const ContentWrapper = styled.div`
   height: 560px;
   /* background-color: #f7e9e9; */
   animation: 0.7s ease-in-out ${boxFade};
+
+  ${MediaQuery.mobile} {
+    height: 450px;
+  }
 `;
 
 export const ValueList = styled.div`
@@ -44,6 +48,14 @@ export const BlackContentWrapper = styled.div`
   box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
   border-radius: 10px;
+
+  ${MediaQuery.mobile} {
+    padding: 15px;
+    width: 100px;
+    height: 250px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 `;
 
 export const ValueImgDiv = styled.div`
@@ -88,6 +100,28 @@ export const ValueImg = styled.div`
 
   p {
     font-size: 13px;
+  }
+
+  ${MediaQuery.mobile} {
+    .logo {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .maintitle {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 10px;
+    }
   }
 `;
 
