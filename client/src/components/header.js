@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { baseBlack, MediaQuery, pointColor } from "../GlobalStyle";
 import { useEffect, useState } from "react";
-import TeamDropDown from "./teamDropdown";
+// import TeamDropDown from "./teamDropdown";
 
 export const Background = styled.div`
   position: fixed;
@@ -81,16 +81,18 @@ export const DropdownBackGround = styled.div`
 `;
 
 function Header() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  // const [teamDropDown, setTeamDropDown] = useState(false);
 
+  //스크롤 포지션 상태
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const [teamDropDown, setTeamDropDown] = useState(false);
-
+  //스크롤 포지션 업데이트 함수
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
 
+  //스크롤 될 때 마다 실행
   useEffect(() => {
     window.addEventListener("scroll", updateScroll);
   });

@@ -1,20 +1,22 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { boxFade } from "../../GlobalStyle";
+import { MediaQuery } from "../../GlobalStyle";
 import Zoom from "@stahl.luke/react-reveal/Fade";
 
 export const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 720px;
-  /* animation: 0.7s ease-in-out ${boxFade}; */
   align-items: center;
+
+  ${MediaQuery.mobile} {
+    height: 650px;
+  }
 `;
 
 export const Concert = styled.div`
   display: flex;
   justify-content: center;
-  /* animation: 0.7s ease-in-out ${boxFade}; */
   align-items: center;
 
   .concertInfo {
@@ -77,9 +79,49 @@ export const Concert = styled.div`
   .concertImg img:hover {
     transform: scale(1.05);
   }
+
+  ${MediaQuery.mobile} {
+    flex-direction: column-reverse;
+
+    .concertImg {
+      margin-bottom: 20px;
+    }
+
+    .concertTitleDiv {
+      font-size: 20px;
+    }
+
+    .concertContentDiv {
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .concertInfo {
+      width: 250px;
+    }
+
+    .concertImg > div > div {
+      width: 100px;
+      height: 140px;
+      overflow: hidden;
+    }
+
+    .introLogoDiv {
+      margin-bottom: 5px;
+    }
+  }
 `;
 
 export default function AboutFourth() {
+  // 클릭하면 스크롤이 위로 올라가는 함수
+  const handleTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  };
+
   return (
     <ContentWrapper>
       <Zoom bottom>
@@ -103,16 +145,14 @@ export default function AboutFourth() {
                 <br />
                 청춘들의 열정에 불을 지피고
                 <br />
-                그들의 꿈에 한발자국 더 다가갈 수 있도록
-                <br />
-                응원합니다.
+                그들의 꿈이 실현되도록 돕습니다.
               </p>
             </div>
           </div>
           <div className="concertImg">
             <div>
               <div>
-                <Link to="project/detail/1">
+                <Link to="project/detail/1" onClick={handleTop}>
                   <img
                     name="하늘에별따기"
                     src="https://cdn.discordapp.com/attachments/938684956916449330/939322806498394192/bulbuConcert.jpg"
@@ -121,7 +161,7 @@ export default function AboutFourth() {
                 </Link>
               </div>
               <div>
-                <Link to="project/detail/4">
+                <Link to="project/detail/3" onClick={handleTop}>
                   <img
                     name="1250project"
                     src="https://media.discordapp.net/attachments/938684956916449330/939783195367444490/concert.2.jpeg"
@@ -132,7 +172,7 @@ export default function AboutFourth() {
             </div>
             <div>
               <div>
-                <Link to="project/detail/3">
+                <Link to="project/detail/2" onClick={handleTop}>
                   <img
                     name="시즌"
                     src="https://cdn.discordapp.com/attachments/938684956916449330/939783195673657364/concert1.jpeg"
@@ -141,7 +181,7 @@ export default function AboutFourth() {
                 </Link>
               </div>
               <div>
-                <Link to="project/detail/2">
+                <Link to="project/sdetail/3" onClick={handleTop}>
                   <img
                     name="소통"
                     src="https://cdn.discordapp.com/attachments/938684956916449330/939783196034359296/concert3.jpeg"

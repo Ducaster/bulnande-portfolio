@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
+import { MediaQuery } from "../GlobalStyle";
 
 export const SliderDiv = styled.div`
   margin: 60px 50px 20px 50px;
@@ -28,6 +29,12 @@ export const SliderDiv = styled.div`
   .slick-next:before {
     opacity: 1;
     color: black;
+  }
+
+  ${MediaQuery.mobile} {
+    width: 250px;
+    height: 150px;
+    margin-bottom: 50px;
   }
 `;
 
