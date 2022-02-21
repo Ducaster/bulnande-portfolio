@@ -60,7 +60,7 @@ export const TextArea = styled.div`
   color: white;
   border-left: 1px solid white;
   border-right: 1px solid white;
-  padding: 0px 40px 0px 40px;
+  padding: 0px 40px 0px 35px;
 
   .introTitle {
     font-size: 28px;

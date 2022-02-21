@@ -11,8 +11,7 @@ export const SliderDiv = styled.div`
   height: 460px;
 
   div {
-    box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
+    box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px;
   }
 
   img {
