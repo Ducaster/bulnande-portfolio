@@ -2,7 +2,8 @@ import { useRef } from "react";
 import styled from "styled-components";
 import Layout from "./layout";
 import emailjs from "@emailjs/browser";
-import { boxFade, MediaQuery } from "../GlobalStyle";
+import { baseBlack, boxFade, MediaQuery } from "../GlobalStyle";
+import Swal from "sweetalert2";
 
 export const MainContainer = styled.div`
   display: flex;
@@ -113,60 +114,97 @@ export const ContactDiv = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  .form-control {
-    width: 300px;
-    min-height: 35px;
-  }
-
   .contactForm {
     display: flex;
     justify-content: center;
-    margin: 40px 20px 0px 20px;
+    margin: 20px;
   }
 
   .title {
-    margin: 10px;
     display: flex;
-    justify-content: center;
-    font-size: 23px;
+    height: 35px;
+    align-items: center;
+    font-size: 22px;
     font-weight: bold;
   }
 
-  input {
-    width: 100%;
-    font-size: 1vmin;
-  }
-
-  .input-group-text {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    font-size: 1.3vmin;
-    justify-content: center;
-  }
-  .span {
-    width: 20px;
-    text-align: center;
-  }
-
-  .form-select {
-    font-size: 1vmin;
-  }
-
-  .textarea {
-    margin-bottom: 10px;
-  }
-
-  .submitBtn {
-    display: flex;
-    justify-content: center;
-    margin: 30px;
-  }
-
   ${MediaQuery.mobile} {
+    .contactForm {
+      margin: 10px;
+    }
+
     .title {
       font-size: 18px;
     }
+  }
+`;
+
+const TextareaWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 15px 5px 5px 5px;
+`;
+
+const ContentWarpper = styled.div`
+  display: flex;
+  margin: 5px;
+  border-bottom: 1px solid #d6d6d6;
+  padding: 3px;
+`;
+
+const ContactLabel = styled.label`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-right: 15px;
+  width: 40px;
+  color: ${baseBlack};
+  font-size: 14px;
+
+  ${MediaQuery.mobile} {
+    font-size: 13px;
+  }
+`;
+
+const ContactInput = styled.input`
+  width: 400px;
+  border: none;
+
+  :focus {
+    outline: none;
+  }
+
+  ${MediaQuery.mobile} {
+    width: 100px;
+    font-size: 13px;
+  }
+`;
+
+const ContactTextarea = styled.textarea`
+  display: flex;
+  border: 1px solid #d6d6d6;
+  padding: 5px;
+
+  :focus {
+    outline: none;
+  }
+`;
+
+const ContactBtn = styled.input`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px 5px 5px;
+  width: 465px;
+  font-size: 14px;
+  background-color: ${baseBlack};
+  color: white;
+  border: none;
+  height: 35px;
+
+  ${MediaQuery.mobile} {
+    width: 270px;
+    font-size: 13px;
   }
 `;
 
@@ -186,11 +224,15 @@ function Contact() {
       )
       .then(
         (result) => {
-          alert("문의 내용이 정상적으로 전달되었습니다.");
-          console.log(result.text);
+          Swal.fire({
+            icon: "success",
+            title: "메일발송 완료",
+            text: "소중한 의견 감사합니다",
+          });
+          console.log(form);
         },
         (error) => {
-          console.log(error.text);
+          alert(error);
         }
       );
   };
@@ -209,58 +251,31 @@ function Contact() {
           <MainWrapper>
             <ContentWrapper>
               <ContactDiv>
-                <div className="title">Contact Us</div>
+                <div className="title">Contact us</div>
               </ContactDiv>
             </ContentWrapper>
             <ContentWrapper>
               <ContactDiv>
                 <div className="contactForm">
                   <form ref={form} onSubmit={sendEmail}>
-                    <div class="input-group mb-3">
-                      <label class="input-group-text" id="basic-addon3">
-                        Name
-                      </label>
-                      <input
-                        class="form-control"
-                        id="basic-url"
-                        aria-describedby="basic-addon3"
-                        type="text"
-                        name="name"
-                      />
-                    </div>
-                    <div class="input-group mb-3">
-                      <label class="input-group-text" id="basic-addon3">
-                        Email
-                      </label>
-                      <input
-                        class="form-control"
-                        id="basic-url"
-                        aria-describedby="basic-addon3"
-                        type="email"
-                        name="email"
-                      />
-                    </div>
-                    <div class="input-group mb-3">
-                      <label class="input-group-text">Title</label>
-                      <input
-                        class="form-control"
-                        id="basic-url"
-                        aria-describedby="basic-addon3"
-                        type="text"
-                        name="title"
-                      />
-                    </div>
-                    <div class="input-group">
-                      <label class="input-group-text">Message</label>
-                      <textarea
-                        class="form-control"
-                        aria-label="With textarea"
-                        cols="1"
-                        name="message"
-                      />
-                    </div>
+                    <ContentWarpper>
+                      <ContactLabel for="name">Name</ContactLabel>
+                      <ContactInput id="name" />
+                    </ContentWarpper>
+                    <ContentWarpper>
+                      <ContactLabel for="email">Email</ContactLabel>
+                      <ContactInput id="email" type="email" />
+                    </ContentWarpper>
+                    <ContentWarpper>
+                      <ContactLabel for="title">Title</ContactLabel>
+                      <ContactInput id="title" />
+                    </ContentWarpper>
+                    <TextareaWrapper>
+                      <ContactLabel for="message">Message</ContactLabel>
+                      <ContactTextarea id="message" />
+                    </TextareaWrapper>
                     <div className="submitBtn">
-                      <input class="btn btn-dark" type="submit" value="Send" />
+                      <ContactBtn type="submit" value="Send" />
                     </div>
                   </form>
                 </div>
