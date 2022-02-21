@@ -284,7 +284,7 @@ function Contact() {
           </MainWrapper>
           <ImgDiv>
             <img
-              src="https://cdn.discordapp.com/attachments/938684956916449330/941196311561125889/photo_2022-02-10_13.57.46.jpeg"
+              src="https://cdn.discordapp.com/attachments/938684956916449330/945284820446117898/contact_img3.jpg"
               alt=""
             />
           </ImgDiv>
