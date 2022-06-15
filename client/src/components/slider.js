@@ -15,9 +15,8 @@ export const SliderDiv = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 600px;
+    height: 405px;
   }
 
   .slick-prev:before {
@@ -38,6 +37,14 @@ export const SliderDiv = styled.div`
 `;
 
 export default function SimpleSlider() {
+  const sourceImg = [
+    "https://cdn.discordapp.com/attachments/938684956916449330/941198256132739102/photo_2022-02-10_14.05.38.jpeg",
+    "https://cdn.discordapp.com/attachments/938684956916449330/941171778619863090/photo_2022-02-10_12.19.47.jpeg",
+    "https://cdn.discordapp.com/attachments/938684956916449330/941210226579894302/photo_2022-02-10_14.50.07.jpeg",
+    "https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg",
+    "https://cdn.discordapp.com/attachments/938684956916449330/941171802858717295/photo_2022-02-10_12.19.50.jpeg",
+  ];
+
   const settings = {
     dots: true, // 밑에 dot으로 사진 갯수 표현
     infinite: true, // 사진의 마지막에서 1번째 사진으로 넘어갈지 말지 설정
@@ -51,39 +58,9 @@ export default function SimpleSlider() {
   return (
     <SliderDiv>
       <Slider {...settings}>
-        <div>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941198256132739102/photo_2022-02-10_14.05.38.jpeg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941171778619863090/photo_2022-02-10_12.19.47.jpeg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941210226579894302/photo_2022-02-10_14.50.07.jpeg"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941211195686387732/photo_2022-02-10_14.54.42.jpeg"
-            alt=""
-          />
-        </div>
-        {/* <div>
-            <img src="https://cdn.discordapp.com/attachments/938684956916449330/941215749115084820/photo_2022-02-10_15.15.05.jpeg" />
-          </div> */}
-        <div>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941171802858717295/photo_2022-02-10_12.19.50.jpeg"
-            alt=""
-          />
-        </div>
+        {sourceImg.map((el, idx) => {
+          return <img src={el} key={idx} alt="" />;
+        })}
       </Slider>
     </SliderDiv>
   );
