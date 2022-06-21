@@ -1,6 +1,48 @@
 import styled from "styled-components";
 import { MediaQuery } from "../GlobalStyle";
 
+function SingleMember({ data }) {
+  return (
+    <ContentWrapper>
+      <AllTeam>
+        <Profile>
+          <img className="profileImg" src={data.profile} alt="" />
+        </Profile>
+        <Content>
+          <Name>
+            <div>
+              {data.name}
+              <span style={{ color: "#ee292f", fontWeight: "bold" }}>
+                {" "}
+                /{" "}
+              </span>{" "}
+              <span style={{ color: "#a29797" }}>{data.position}</span>
+            </div>
+          </Name>
+          <SubContent>
+            Works
+            {data.works.map((el, idx) => {
+              return <p key={idx}>{el}</p>;
+            })}
+          </SubContent>
+          <SubContent>
+            Contact
+            <p>{data.email}</p>
+          </SubContent>
+        </Content>
+      </AllTeam>
+      <ImageWarpper>
+        <img
+          src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
+          alt=""
+        />
+      </ImageWarpper>
+    </ContentWrapper>
+  );
+}
+
+export default SingleMember;
+
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -102,45 +144,3 @@ export const ImageWarpper = styled.div`
     width: 20px;
   }
 `;
-
-function SingleMember({ data }) {
-  return (
-    <ContentWrapper>
-      <AllTeam>
-        <Profile>
-          <img className="profileImg" src={data.profile} alt="" />
-        </Profile>
-        <Content>
-          <Name>
-            <div>
-              {data.name}
-              <span style={{ color: "#ee292f", fontWeight: "bold" }}>
-                {" "}
-                /{" "}
-              </span>{" "}
-              <span style={{ color: "#a29797" }}>{data.position}</span>
-            </div>
-          </Name>
-          <SubContent>
-            Works
-            {data.works.map((el, idx) => {
-              return <p key={idx}>{el}</p>;
-            })}
-          </SubContent>
-          <SubContent>
-            Contact
-            <p>{data.email}</p>
-          </SubContent>
-        </Content>
-      </AllTeam>
-      <ImageWarpper>
-        <img
-          src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
-          alt=""
-        />
-      </ImageWarpper>
-    </ContentWrapper>
-  );
-}
-
-export default SingleMember;

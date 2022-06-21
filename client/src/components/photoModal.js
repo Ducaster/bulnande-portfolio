@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { MediaQuery } from "../GlobalStyle";
 
+function PhotoModal({ handleOpenPhoto, data, idx }) {
+  return (
+    <MainDiv onClick={handleOpenPhoto}>
+      <div>
+        <Photo src={data[idx]} alt="" />
+      </div>
+    </MainDiv>
+  );
+}
+
+export default PhotoModal;
+
 const MainDiv = styled.div`
   background-color: rgba(58, 58, 58, 0.4);
   position: fixed;
@@ -28,15 +40,3 @@ const Photo = styled.img`
     width: 350px;
   }
 `;
-
-function PhotoModal({ handleOpenPhoto, data, idx }) {
-  return (
-    <MainDiv onClick={handleOpenPhoto}>
-      <div>
-        <Photo src={data[idx]} alt="" />
-      </div>
-    </MainDiv>
-  );
-}
-
-export default PhotoModal;

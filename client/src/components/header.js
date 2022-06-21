@@ -2,7 +2,75 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { baseBlack, MediaQuery, pointColor } from "../GlobalStyle";
 import { useEffect, useState } from "react";
-// import TeamDropDown from "./teamDropdown";
+
+function Header() {
+  //스크롤 포지션 상태
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  //스크롤 포지션 업데이트 함수
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  //스크롤 될 때 마다 실행
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll);
+  });
+
+  return (
+    <Background scrollPosition={scrollPosition}>
+      <HeaderStyle>
+        <Link to="/">
+          <img
+            className={
+              scrollPosition < 100 ? "original_header" : "changed_header"
+            }
+            src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png"
+            alt=""
+          />
+        </Link>
+      </HeaderStyle>
+      <Navbar scrollPosition={scrollPosition}>
+        <Link to="/">
+          <PathName
+            className={window.location.pathname === "/" ? "active" : ""}
+          >
+            About us
+          </PathName>
+        </Link>
+        <Link to="/team">
+          <PathName
+            className={
+              window.location.pathname.indexOf("/team") !== -1 ? "active" : ""
+            }
+          >
+            Team
+          </PathName>
+        </Link>
+        <Link to="/project">
+          <PathName
+            className={
+              window.location.pathname.indexOf("/project") !== -1
+                ? "active"
+                : ""
+            }
+          >
+            Project
+          </PathName>
+        </Link>
+        <Link to="/contact">
+          <PathName
+            className={window.location.pathname === "/contact" ? "active" : ""}
+          >
+            Contact
+          </PathName>
+        </Link>
+      </Navbar>
+    </Background>
+  );
+}
+
+export default Header;
 
 export const Background = styled.div`
   position: fixed;
@@ -79,85 +147,3 @@ export const DropdownBackGround = styled.div`
   bottom: 0%;
   right: 0%;
 `;
-
-function Header() {
-  // const navigate = useNavigate();
-  // const [teamDropDown, setTeamDropDown] = useState(false);
-
-  //스크롤 포지션 상태
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  //스크롤 포지션 업데이트 함수
-  const updateScroll = () => {
-    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
-  };
-
-  //스크롤 될 때 마다 실행
-  useEffect(() => {
-    window.addEventListener("scroll", updateScroll);
-  });
-
-  return (
-    <Background scrollPosition={scrollPosition}>
-      <HeaderStyle>
-        <Link to="/">
-          <img
-            className={
-              scrollPosition < 100 ? "original_header" : "changed_header"
-            }
-            src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png"
-            alt=""
-          />
-        </Link>
-      </HeaderStyle>
-      <Navbar scrollPosition={scrollPosition}>
-        <Link to="/">
-          <PathName
-            className={window.location.pathname === "/" ? "active" : ""}
-          >
-            About us
-          </PathName>
-        </Link>
-        <Link to="/team">
-          <PathName
-            className={
-              window.location.pathname.indexOf("/team") !== -1 ? "active" : ""
-            }
-          >
-            Team
-            {/* {teamDropDown ? (
-              <>
-                <TeamDropDown />
-                <DropdownBackGround
-                  onClick={() => setTeamDropDown(false)}
-                ></DropdownBackGround>
-              </>
-            ) : (
-              ""
-            )} */}
-          </PathName>
-        </Link>
-        <Link to="/project">
-          <PathName
-            className={
-              window.location.pathname.indexOf("/project") !== -1
-                ? "active"
-                : ""
-            }
-          >
-            Project
-          </PathName>
-        </Link>
-        <Link to="/contact">
-          <PathName
-            className={window.location.pathname === "/contact" ? "active" : ""}
-          >
-            Contact
-          </PathName>
-        </Link>
-      </Navbar>
-    </Background>
-  );
-}
-
-export default Header;
