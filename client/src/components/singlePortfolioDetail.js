@@ -29,11 +29,7 @@ function SinglePortfolioDetail() {
   //사진 클릭시 모달창 열리는 함수
   const handleOpenPhoto = (idx) => {
     setCurrent(idx);
-    if (openPhoto) {
-      setOpenPhoto(false);
-    } else {
-      setOpenPhoto(true);
-    }
+    setOpenPhoto((prev) => !prev);
   };
 
   //더미에서 데이터 추출

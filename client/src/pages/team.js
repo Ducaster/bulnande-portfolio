@@ -4,6 +4,49 @@ import SingleMember from "../components/singleMember";
 import { teamMember } from "../data/teamMember";
 import { MediaQuery } from "../GlobalStyle";
 import Layout from "./layout";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+
+function Team() {
+  const [teamInfo, setTeamInfo] = useState({});
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/workers").then((res) => {
+      console.log(res.data);
+      setTeamInfo(res.data);
+    });
+  }, []);
+
+  return (
+    <Layout>
+      <MainDiv>
+        <TextWrapper>
+          많은 사람들은 실패를 두려워해 아예 시작조차 않는 경우가 많다. 그러나
+          내가 보기엔 실패란 시도조차 하지 않는 것을 의미한다.
+          <div>- 마리아 나브라틸로바</div>
+        </TextWrapper>
+        {teamMember.map((el, idx) => {
+          return <SingleMember key={idx} data={el} />;
+        })}
+        <CategoryWrapper>
+          <div>팀 소개 영상</div>
+          <iframe
+            width="528"
+            height="297"
+            src="https://www.youtube.com/embed/tpjze3tf5WY"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </CategoryWrapper>
+      </MainDiv>
+    </Layout>
+  );
+}
+
+export default Team;
 
 export const TextWrapper = styled.div`
   display: flex;
@@ -70,34 +113,3 @@ const CategoryWrapper = styled.div`
     }
   }
 `;
-
-function Team() {
-  return (
-    <Layout>
-      <MainDiv>
-        <TextWrapper>
-          많은 사람들은 실패를 두려워해 아예 시작조차 않는 경우가 많다. 그러나
-          내가 보기엔 실패란 시도조차 하지 않는 것을 의미한다.
-          <div>- 마리아 나브라틸로바</div>
-        </TextWrapper>
-        {teamMember.map((el, idx) => {
-          return <SingleMember key={idx} data={el} />;
-        })}
-        <CategoryWrapper>
-          <div>팀 소개 영상</div>
-          <iframe
-            width="528"
-            height="297"
-            src="https://www.youtube.com/embed/tpjze3tf5WY"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </CategoryWrapper>
-      </MainDiv>
-    </Layout>
-  );
-}
-
-export default Team;

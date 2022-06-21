@@ -2,6 +2,79 @@ import styled from "styled-components";
 import { boxFade, MediaQuery } from "../../GlobalStyle";
 import Fade from "@stahl.luke/react-reveal/Fade";
 
+export default function AboutSecond() {
+  return (
+    <ContentWrapper>
+      <ValueList>
+        {/* <div className="valueTitle">
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
+            alt=""
+          />
+          <b>불난데 부채질</b>은 사람의 가치를 발견합니다.
+        </div> */}
+        <Fade bottom>
+          <ValueImgDiv>
+            <BlackContentWrapper>
+              <ValueImg>
+                <div className="logo">
+                  <img
+                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238521065267200/festival_negative.png"
+                    alt=""
+                  />
+                </div>
+                <div className="maintitle">Culture Sharing</div>
+                <div className="title">
+                  <p>
+                    우리는 문화를 나누고 함께하는 문화 나눔(Culture Sharing)을
+                    적극 실천합니다.
+                  </p>
+                </div>
+              </ValueImg>
+            </BlackContentWrapper>
+            <BlackContentWrapper>
+              <ValueImg>
+                <div className="logo">
+                  <img
+                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520499044352/orchestra_negative.png"
+                    alt=""
+                  />
+                </div>
+                <div className="maintitle">Artist</div>
+                <div className="title">
+                  <p>
+                    잠재력 있는 아티스트를 발굴하여 다양한 문화공연을 진행하고
+                    있습니다.
+                  </p>
+                </div>
+              </ValueImg>
+            </BlackContentWrapper>
+            <BlackContentWrapper>
+              <ValueImg>
+                <div className="logo">
+                  <img
+                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520851341362/business-people_negative.png"
+                    alt=""
+                  />
+                </div>
+                <div className="maintitle">Connect</div>
+                <div className="title">
+                  <p>
+                    너와 내가 모여 <b>우리</b>가 되고,
+                    <br />
+                    우리가 <b>나누는 문화</b>를 통해 더 나은 사회를 만들어
+                    갑니다.
+                  </p>
+                </div>
+              </ValueImg>
+            </BlackContentWrapper>
+          </ValueImgDiv>
+        </Fade>
+      </ValueList>
+    </ContentWrapper>
+  );
+}
+
 export const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -124,76 +197,3 @@ export const ValueImg = styled.div`
     }
   }
 `;
-
-export default function AboutSecond() {
-  return (
-    <ContentWrapper>
-      <ValueList>
-        {/* <div className="valueTitle">
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
-            alt=""
-          />
-          <b>불난데 부채질</b>은 사람의 가치를 발견합니다.
-        </div> */}
-        <Fade bottom>
-          <ValueImgDiv>
-            <BlackContentWrapper>
-              <ValueImg>
-                <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238521065267200/festival_negative.png"
-                    alt=""
-                  />
-                </div>
-                <div className="maintitle">Culture Sharing</div>
-                <div className="title">
-                  <p>
-                    우리는 문화를 나누고 함께하는 문화 나눔(Culture Sharing)을
-                    적극 실천합니다.
-                  </p>
-                </div>
-              </ValueImg>
-            </BlackContentWrapper>
-            <BlackContentWrapper>
-              <ValueImg>
-                <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520499044352/orchestra_negative.png"
-                    alt=""
-                  />
-                </div>
-                <div className="maintitle">Artist</div>
-                <div className="title">
-                  <p>
-                    잠재력 있는 아티스트를 발굴하여 다양한 문화공연을 진행하고
-                    있습니다.
-                  </p>
-                </div>
-              </ValueImg>
-            </BlackContentWrapper>
-            <BlackContentWrapper>
-              <ValueImg>
-                <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520851341362/business-people_negative.png"
-                    alt=""
-                  />
-                </div>
-                <div className="maintitle">Connect</div>
-                <div className="title">
-                  <p>
-                    너와 내가 모여 <b>우리</b>가 되고,
-                    <br />
-                    우리가 <b>나누는 문화</b>를 통해 더 나은 사회를 만들어
-                    갑니다.
-                  </p>
-                </div>
-              </ValueImg>
-            </BlackContentWrapper>
-          </ValueImgDiv>
-        </Fade>
-      </ValueList>
-    </ContentWrapper>
-  );
-}

@@ -7,6 +7,72 @@ import Layout from "./layout";
 import { boxFade, MediaQuery, pointColor } from "../GlobalStyle";
 import { useState } from "react";
 
+function Project() {
+  //장기프로젝트 데이터 상태
+  const [data, setData] = useState(dummydata);
+
+  //단기프로젝트 데이터 상태
+  const [shortData, setShortData] = useState(dummydataShort);
+
+  //프로젝트명으로 검색하는 함수
+  const handlSearch = (e) => {
+    let filtered = dummydata.filter((el) => {
+      return el.title.indexOf(e.target.value) !== -1;
+    });
+
+    let filteredShort = dummydataShort.filter((el) => {
+      return el.title.indexOf(e.target.value) !== -1;
+    });
+
+    setData(filtered);
+    setShortData(filteredShort);
+  };
+
+  return (
+    <Layout>
+      <MainContainer>
+        <SearchBar>
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/941881851671363634/search_icon_1.png"
+            alt=""
+          />
+          <input
+            type="text"
+            placeholder="프로젝트명을 입력하세요"
+            onChange={handlSearch}
+          />
+        </SearchBar>
+        <TextWrapper>
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
+            alt=""
+          />
+          장기프로젝트
+        </TextWrapper>
+        <MainDiv className="mount">
+          {data.map((el, idx) => {
+            return <SinglePortfolio key={idx} data={el} />;
+          })}
+        </MainDiv>
+        <TextWrapper>
+          <img
+            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
+            alt=""
+          />
+          단기프로젝트
+        </TextWrapper>
+        <MainDiv className="mount">
+          {shortData.map((el, idx) => {
+            return <SinglePortfolioShort key={idx} data={el} />;
+          })}
+        </MainDiv>
+      </MainContainer>
+    </Layout>
+  );
+}
+
+export default Project;
+
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -109,69 +175,3 @@ export const TextWrapper = styled.div`
     }
   }
 `;
-
-function Project() {
-  //장기프로젝트 데이터 상태
-  const [data, setData] = useState(dummydata);
-
-  //단기프로젝트 데이터 상태
-  const [shortData, setShortData] = useState(dummydataShort);
-
-  //프로젝트명으로 검색하는 함수
-  const handlSearch = (e) => {
-    let filtered = dummydata.filter((el) => {
-      return el.title.indexOf(e.target.value) !== -1;
-    });
-
-    let filteredShort = dummydataShort.filter((el) => {
-      return el.title.indexOf(e.target.value) !== -1;
-    });
-
-    setData(filtered);
-    setShortData(filteredShort);
-  };
-
-  return (
-    <Layout>
-      <MainContainer>
-        <SearchBar>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941881851671363634/search_icon_1.png"
-            alt=""
-          />
-          <input
-            type="text"
-            placeholder="프로젝트명을 입력하세요"
-            onChange={handlSearch}
-          />
-        </SearchBar>
-        <TextWrapper>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
-            alt=""
-          />
-          장기프로젝트
-        </TextWrapper>
-        <MainDiv className="mount">
-          {data.map((el, idx) => {
-            return <SinglePortfolio key={idx} data={el} />;
-          })}
-        </MainDiv>
-        <TextWrapper>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
-            alt=""
-          />
-          단기프로젝트
-        </TextWrapper>
-        <MainDiv className="mount">
-          {shortData.map((el, idx) => {
-            return <SinglePortfolioShort key={idx} data={el} />;
-          })}
-        </MainDiv>
-      </MainContainer>
-    </Layout>
-  );
-}
-
-export default Project;

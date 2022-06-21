@@ -5,12 +5,101 @@ import emailjs from "@emailjs/browser";
 import { baseBlack, boxFade, MediaQuery } from "../GlobalStyle";
 import Swal from "sweetalert2";
 
+function Contact() {
+  const form = useRef();
+
+  //메일보내는 함수
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_h52sk4m",
+        "bulbu_contact",
+        form.current,
+        "user_8qHaapmo2rFmpMZ2GoV0k"
+      )
+      .then(
+        (result) => {
+          Swal.fire({
+            icon: "success",
+            title: "메일발송 완료",
+            text: "소중한 의견 감사합니다",
+          });
+          console.log(form);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+  };
+
+  return (
+    <Layout>
+      <MainContainer>
+        <TextWrapper>
+          <p>저희 단체는 현재 운영이 중단되었습니다.</p>
+          <p>
+            불난데부채질과 관련한 특별한 문의사항이 있을 시 아래로 연락
+            부탁드립니다.
+          </p>
+        </TextWrapper>
+        <MainDiv>
+          <MainWrapper>
+            <ContentWrapper>
+              <ContactDiv>
+                <div className="title">Contact us</div>
+              </ContactDiv>
+            </ContentWrapper>
+            <ContentWrapper>
+              <ContactDiv>
+                <div className="contactForm">
+                  <form ref={form} onSubmit={sendEmail}>
+                    <ContentWarpper>
+                      <ContactLabel for="name">Name</ContactLabel>
+                      <ContactInput id="name" />
+                    </ContentWarpper>
+                    <ContentWarpper>
+                      <ContactLabel for="email">Email</ContactLabel>
+                      <ContactInput id="email" type="email" />
+                    </ContentWarpper>
+                    <ContentWarpper>
+                      <ContactLabel for="title">Title</ContactLabel>
+                      <ContactInput id="title" />
+                    </ContentWarpper>
+                    <TextareaWrapper>
+                      <ContactLabel for="message">Message</ContactLabel>
+                      <ContactTextarea id="message" />
+                    </TextareaWrapper>
+                    <div className="submitBtn">
+                      <ContactBtn type="submit" value="Send" />
+                    </div>
+                  </form>
+                </div>
+              </ContactDiv>
+            </ContentWrapper>
+          </MainWrapper>
+          <ImgDiv>
+            <img
+              src="https://cdn.discordapp.com/attachments/938684956916449330/945284820446117898/contact_img3.jpg"
+              alt=""
+            />
+          </ImgDiv>
+        </MainDiv>
+      </MainContainer>
+    </Layout>
+  );
+}
+
+export default Contact;
+
 export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  height: 650px;
+  height: calc(100vh - 230px);
+  /* height: 100vh; */
   animation: 0.7s ease-in-out ${boxFade};
   margin: 25px 0px 25px 0px;
 
@@ -207,91 +296,3 @@ const ContactBtn = styled.input`
     font-size: 13px;
   }
 `;
-
-function Contact() {
-  const form = useRef();
-
-  //메일보내는 함수
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_h52sk4m",
-        "bulbu_contact",
-        form.current,
-        "user_8qHaapmo2rFmpMZ2GoV0k"
-      )
-      .then(
-        (result) => {
-          Swal.fire({
-            icon: "success",
-            title: "메일발송 완료",
-            text: "소중한 의견 감사합니다",
-          });
-          console.log(form);
-        },
-        (error) => {
-          alert(error);
-        }
-      );
-  };
-
-  return (
-    <Layout>
-      <MainContainer>
-        <TextWrapper>
-          <p>저희 단체는 현재 운영이 중단되었습니다.</p>
-          <p>
-            불난데부채질과 관련한 특별한 문의사항이 있을 시 아래로 연락
-            부탁드립니다.
-          </p>
-        </TextWrapper>
-        <MainDiv>
-          <MainWrapper>
-            <ContentWrapper>
-              <ContactDiv>
-                <div className="title">Contact us</div>
-              </ContactDiv>
-            </ContentWrapper>
-            <ContentWrapper>
-              <ContactDiv>
-                <div className="contactForm">
-                  <form ref={form} onSubmit={sendEmail}>
-                    <ContentWarpper>
-                      <ContactLabel for="name">Name</ContactLabel>
-                      <ContactInput id="name" />
-                    </ContentWarpper>
-                    <ContentWarpper>
-                      <ContactLabel for="email">Email</ContactLabel>
-                      <ContactInput id="email" type="email" />
-                    </ContentWarpper>
-                    <ContentWarpper>
-                      <ContactLabel for="title">Title</ContactLabel>
-                      <ContactInput id="title" />
-                    </ContentWarpper>
-                    <TextareaWrapper>
-                      <ContactLabel for="message">Message</ContactLabel>
-                      <ContactTextarea id="message" />
-                    </TextareaWrapper>
-                    <div className="submitBtn">
-                      <ContactBtn type="submit" value="Send" />
-                    </div>
-                  </form>
-                </div>
-              </ContactDiv>
-            </ContentWrapper>
-          </MainWrapper>
-          <ImgDiv>
-            <img
-              src="https://cdn.discordapp.com/attachments/938684956916449330/945284820446117898/contact_img3.jpg"
-              alt=""
-            />
-          </ImgDiv>
-        </MainDiv>
-      </MainContainer>
-    </Layout>
-  );
-}
-
-export default Contact;
