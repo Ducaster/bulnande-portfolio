@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const portfolioRouter = require("./portfolioRouter");
 const workerRouter = require("./workerRouter");
+const projectRouter = require("./projectRouter");
 
-router.use("/portfolio", portfolioRouter);
 router.use("/workers", workerRouter);
+router.use("/projects", projectRouter);
 
 module.exports = router;
