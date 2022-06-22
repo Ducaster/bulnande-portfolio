@@ -2,3 +2,4 @@
 ### 사용스택
 - 클라이언트 : React, Styled-componont, Axios
 - 서버 : Express.js, Sequelize, Sequeilize-cli
+- DBMS : PostgreSQL
