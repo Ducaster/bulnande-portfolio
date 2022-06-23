@@ -7,3 +7,6 @@
 - 클라이언트 : React, Styled-component, Axios
 - 서버 : Express.js, Sequelize, Sequeilize-cli
 - DBMS : PostgreSQL
+
+### DB diagram
+![Bulbu DB diagram](https://user-images.githubusercontent.com/87600115/175210437-72f0381e-fb7e-4929-9dc3-c766ccfc3834.png)
