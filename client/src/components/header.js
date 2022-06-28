@@ -73,11 +73,16 @@ function Header() {
 export default Header;
 
 export const Background = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 2;
+  height: ${(props) => (props.scrollPosition > 100 ? "50px" : "114px")};
   padding: ${(props) => (props.scrollPosition > 100 ? "0px" : "10px")};
   background-color: ${(props) =>
     props.scrollPosition > 100 ? "rgba(255, 255, 255, 0.9)" : baseBlack};
