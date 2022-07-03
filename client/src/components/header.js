@@ -1,15 +1,28 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { baseBlack, MediaQuery, pointColor } from "../GlobalStyle";
 import { useEffect, useState } from "react";
 
 function Header() {
+  const navigate = useNavigate();
+
   //스크롤 포지션 상태
   const [scrollPosition, setScrollPosition] = useState(0);
 
   //스크롤 포지션 업데이트 함수
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+
+  //페이지 이동 함수
+  const movePage = (page) => {
+    navigate(page);
+
+    //*페이지 최상단으로 이동
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
   };
 
   //스크롤 될 때 마다 실행
@@ -31,40 +44,34 @@ function Header() {
         </Link>
       </HeaderStyle>
       <Navbar scrollPosition={scrollPosition}>
-        <Link to="/">
-          <PathName
-            className={window.location.pathname === "/" ? "active" : ""}
-          >
-            About us
-          </PathName>
-        </Link>
-        <Link to="/team">
-          <PathName
-            className={
-              window.location.pathname.indexOf("/team") !== -1 ? "active" : ""
-            }
-          >
-            Team
-          </PathName>
-        </Link>
-        <Link to="/project">
-          <PathName
-            className={
-              window.location.pathname.indexOf("/project") !== -1
-                ? "active"
-                : ""
-            }
-          >
-            Project
-          </PathName>
-        </Link>
-        <Link to="/contact">
-          <PathName
-            className={window.location.pathname === "/contact" ? "active" : ""}
-          >
-            Contact
-          </PathName>
-        </Link>
+        <PathName
+          className={window.location.pathname === "/" ? "active" : ""}
+          onClick={() => movePage("/")}
+        >
+          About us
+        </PathName>
+        <PathName
+          className={
+            window.location.pathname.indexOf("/team") !== -1 ? "active" : ""
+          }
+          onClick={() => movePage("/team")}
+        >
+          Team
+        </PathName>
+        <PathName
+          className={
+            window.location.pathname.indexOf("/project") !== -1 ? "active" : ""
+          }
+          onClick={() => movePage("/project")}
+        >
+          Project
+        </PathName>
+        <PathName
+          className={window.location.pathname === "/contact" ? "active" : ""}
+          onClick={() => movePage("/contact")}
+        >
+          Contact
+        </PathName>
       </Navbar>
     </Background>
   );
@@ -72,7 +79,7 @@ function Header() {
 
 export default Header;
 
-export const Background = styled.div`
+const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +97,7 @@ export const Background = styled.div`
     props.scrollPosition > 100 ? "rgba(0, 0, 0, 0.1) 0px 3px 2px 0px" : "none"};
 `;
 
-export const HeaderStyle = styled.div`
+const HeaderStyle = styled.div`
   display: flex;
   justify-content: center;
 
@@ -115,7 +122,7 @@ export const HeaderStyle = styled.div`
   }
 `;
 
-export const Navbar = styled.div`
+const Navbar = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -127,6 +134,7 @@ export const Navbar = styled.div`
   }
 
   a {
+    cursor: pointer;
     color: ${(props) => (props.scrollPosition > 100 ? baseBlack : "white")};
     text-decoration: none;
   }
@@ -139,12 +147,11 @@ export const Navbar = styled.div`
   }
 `;
 
-export const PathName = styled.p`
-  .navPath {
-  }
+const PathName = styled.a`
+  margin-bottom: 15px;
 `;
 
-export const DropdownBackGround = styled.div`
+const DropdownBackGround = styled.div`
   background-color: rgba(0, 0, 0, 0);
   position: fixed;
   top: 0%;
