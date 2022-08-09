@@ -1,29 +1,24 @@
 import styled from "styled-components";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "./layout";
 import AboutFirst from "../components/about/first";
 import AboutSecond from "../components/about/second";
 import AboutThird from "../components/about/third";
 import AboutFourth from "../components/about/fourth";
+import { FlexColumnDiv } from "../style/utility.style";
 
-function About() {
+export default function About() {
   return (
     <Layout>
-      <AlignDiv>
+      <AboutContainer>
         <AboutFirst />
         <AboutSecond />
         <AboutThird />
         <AboutFourth />
-      </AlignDiv>
+      </AboutContainer>
     </Layout>
   );
 }
 
-export default About;
-
-export const AlignDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+const AboutContainer = styled(FlexColumnDiv)`
   width: 100%;
 `;

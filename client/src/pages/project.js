@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import SinglePortfolio from "../components/singlePortfolio";
-import SinglePortfolioShort from "../components/singlePortfolioShort";
 import { dummydata } from "../data/dummydata";
 import { dummydataShort } from "../data/dummydataShort";
 import Layout from "./layout";
-import { boxFade, MediaQuery, pointColor } from "../GlobalStyle";
 import { useState } from "react";
+import { boxFade, MediaQuery, pointColor } from "../style/GlobalStyle";
+import SinglePortfolio from "../components/project/singlePortfolio";
+import SinglePortfolioShort from "../components/project/singlePortfolioShort";
 
-function Project() {
+export default function Project() {
   //장기프로젝트 데이터 상태
   const [data, setData] = useState(dummydata);
 
@@ -71,8 +71,6 @@ function Project() {
   );
 }
 
-export default Project;
-
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -81,7 +79,7 @@ const MainContainer = styled.div`
   margin: 35px 0px 25px 0px;
 `;
 
-export const SearchBar = styled.div`
+const SearchBar = styled.div`
   display: flex;
   width: 1150px;
   height: 60px;
@@ -122,7 +120,7 @@ export const SearchBar = styled.div`
   }
 `;
 
-export const MainDiv = styled.div`
+const MainDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -136,7 +134,7 @@ export const MainDiv = styled.div`
   }
 `;
 
-export const TextWrapper = styled.div`
+const TextWrapper = styled.div`
   display: flex;
   color: #2f2f2f;
   width: 1150px;

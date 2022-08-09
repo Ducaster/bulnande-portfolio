@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { MediaQuery } from "../../GlobalStyle";
+import { MediaQuery } from "../../style/GlobalStyle";
 import Zoom from "@stahl.luke/react-reveal/Fade";
+import { FlexDiv } from "../../style/utility.style";
 
 export default function AboutFourth() {
   // 클릭하면 스크롤이 위로 올라가는 함수
@@ -87,9 +88,7 @@ export default function AboutFourth() {
   );
 }
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const ContentWrapper = styled(FlexDiv)`
   height: 720px;
   align-items: center;
 
@@ -98,9 +97,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Concert = styled.div`
-  display: flex;
-  justify-content: center;
+const Concert = styled(FlexDiv)`
   align-items: center;
 
   .concertInfo {
@@ -141,7 +138,6 @@ export const Concert = styled.div`
 
   .concertImg {
     margin: 10px;
-    /* height: 500px; */
     display: flex;
     box-shadow: rgba(50, 50, 93, 0.5) 0px 50px 100px -40px,
       rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { boxFade, MediaQuery } from "../../GlobalStyle";
+import { boxFade, MediaQuery } from "../../style/GlobalStyle";
 
 export default function AboutFirst() {
   return (
@@ -31,7 +31,7 @@ export default function AboutFirst() {
   );
 }
 
-export const ContentWrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,7 +69,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const ImageTrans = styled.div`
+const ImageTrans = styled.div`
   display: flex;
   justify-content: center;
   animation: 0.7s ease-in-out ${boxFade};
@@ -81,7 +81,7 @@ export const ImageTrans = styled.div`
   }
 `;
 
-export const TextArea = styled.div`
+const TextArea = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 30px;

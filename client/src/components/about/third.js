@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { boxFade, MediaQuery } from "../../GlobalStyle";
-import ImageSlider from "../slider";
+import { boxFade, MediaQuery } from "../../style/GlobalStyle";
+import ImageSlider from "./slider";
 import Fade from "@stahl.luke/react-reveal/Fade";
 
 export default function AboutThird() {
@@ -59,7 +59,7 @@ export default function AboutThird() {
   );
 }
 
-export const ContentWrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 650px;
@@ -74,7 +74,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Musician = styled.div`
+const Musician = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
