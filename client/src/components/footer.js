@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { baseBlack, MediaQuery } from "../GlobalStyle";
+import { baseBlack, MediaQuery } from "../style/GlobalStyle";
+import { FlexDiv } from "../style/utility.style";
 
-function Footer() {
+export default function Footer() {
   // 클릭하면 스크롤이 위로 올라가는 함수
   const handleTop = () => {
     window.scrollTo({
@@ -40,22 +41,16 @@ function Footer() {
   );
 }
 
-export default Footer;
-
-export const MainDiv = styled.div`
+const MainDiv = styled(FlexDiv)`
   background-color: ${baseBlack};
   margin: 0;
-  display: flex;
-  justify-content: center;
 `;
 
-export const FooterDiv = styled.div`
+const FooterDiv = styled(FlexDiv)`
   width: 1150px;
   height: 120px;
   margin: 0;
-  display: flex;
   align-items: center;
-  justify-content: center;
   border: none;
   color: white;
 
@@ -65,7 +60,7 @@ export const FooterDiv = styled.div`
   }
 `;
 
-export const Left = styled.div`
+const Left = styled.div`
   flex: 1 0 auto;
 
   img {
@@ -86,7 +81,7 @@ export const Left = styled.div`
   }
 `;
 
-export const Right = styled.div`
+const Right = styled.div`
   display: flex;
   gap: 10px;
   justify-content: right;
@@ -108,4 +103,4 @@ export const Right = styled.div`
   }
 `;
 
-export const PathName = styled.div``;
+const PathName = styled.div``;

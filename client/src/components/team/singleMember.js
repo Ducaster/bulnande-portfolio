@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { MediaQuery } from "../GlobalStyle";
+import { MediaQuery } from "../../style/GlobalStyle";
 
-function SingleMember({ data }) {
+export default function SingleMember({ data }) {
   return (
     <ContentWrapper>
       <AllTeam>
@@ -40,8 +40,6 @@ function SingleMember({ data }) {
     </ContentWrapper>
   );
 }
-
-export default SingleMember;
 
 export const ContentWrapper = styled.div`
   display: flex;

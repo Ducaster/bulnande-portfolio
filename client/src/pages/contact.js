@@ -1,12 +1,23 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Layout from "./layout";
 import emailjs from "@emailjs/browser";
-import { baseBlack, boxFade, MediaQuery } from "../GlobalStyle";
+import { baseBlack, boxFade, MediaQuery } from "../style/GlobalStyle";
 import Swal from "sweetalert2";
+import { FlexColumnDiv, FlexDiv } from "../style/utility.style";
 
-function Contact() {
+export default function Contact() {
   const form = useRef();
+
+  useEffect(() => {
+    Swal.fire({
+      title: "저희 단체는 운영이 중단되었습니다.",
+      text: `저희 단체는 현재 운영이 중단되었습니다. 특별한 문의 사항이 있을 시 메일로 문의해주세요.`,
+      icon: "info",
+      timer: 5000,
+      timerProgressBar: true,
+    });
+  }, []);
 
   //메일보내는 함수
   const sendEmail = (e) => {
@@ -37,13 +48,6 @@ function Contact() {
   return (
     <Layout>
       <MainContainer>
-        <TextWrapper>
-          <p>저희 단체는 현재 운영이 중단되었습니다.</p>
-          <p>
-            불난데부채질과 관련한 특별한 문의사항이 있을 시 아래로 연락
-            부탁드립니다.
-          </p>
-        </TextWrapper>
         <MainDiv>
           <MainWrapper>
             <ContentWrapper>
@@ -51,7 +55,7 @@ function Contact() {
                 <div className="title">Contact us</div>
               </ContactDiv>
             </ContentWrapper>
-            <ContentWrapper>
+            <ContentWrapper className="bottom">
               <ContactDiv>
                 <div className="contactForm">
                   <form ref={form} onSubmit={sendEmail}>
@@ -91,15 +95,9 @@ function Contact() {
   );
 }
 
-export default Contact;
-
-export const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const MainContainer = styled(FlexColumnDiv)`
   gap: 20px;
   height: calc(100vh - 230px);
-  /* height: 100vh; */
   animation: 0.7s ease-in-out ${boxFade};
   margin: 25px 0px 25px 0px;
 
@@ -108,9 +106,7 @@ export const MainContainer = styled.div`
   }
 `;
 
-export const MainDiv = styled.div`
-  display: flex;
-  justify-content: center;
+const MainDiv = styled(FlexDiv)`
   align-items: center;
 
   ${MediaQuery.middle} {
@@ -119,15 +115,11 @@ export const MainDiv = styled.div`
   }
 `;
 
-export const MainWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const MainWrapper = styled(FlexColumnDiv)`
   gap: 14px;
 `;
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const ContentWrapper = styled(FlexDiv)`
   align-items: center;
   width: 600px;
   padding: 10px;
@@ -140,51 +132,18 @@ export const ContentWrapper = styled.div`
   ${MediaQuery.mobile} {
     width: 370px;
   }
-`;
 
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 1150px;
-  padding: 20px;
-  background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
-  border: 1px solid #f6f6f6;
-  border-radius: 10px;
-
-  p {
-    margin: 0px;
-    font-size: 16px;
-    font-weight: bold;
-    align-items: none;
-  }
-
-  ${MediaQuery.middle} {
-    width: 600px;
-    align-items: start;
-  }
-
-  ${MediaQuery.mobile} {
-    width: 370px;
-    align-items: start;
-
-    p {
-      font-size: 14px;
-    }
+  &.bottom {
+    height: 340px;
   }
 `;
 
-export const ImgDiv = styled.div`
-  display: flex;
-  justify-content: center;
+const ImgDiv = styled(FlexDiv)`
   margin-left: 10px;
   overflow: hidden;
   border-radius: 15px;
   width: 540px;
-  height: 455px;
+  height: 410px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -50px;
 
@@ -198,11 +157,7 @@ export const ImgDiv = styled.div`
   }
 `;
 
-export const ContactDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
+const ContactDiv = styled(FlexColumnDiv)`
   .contactForm {
     display: flex;
     justify-content: center;
@@ -228,9 +183,8 @@ export const ContactDiv = styled.div`
   }
 `;
 
-const TextareaWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const TextareaWrapper = styled(FlexDiv)`
+  justify-content: start;
   margin: 15px 5px 5px 5px;
 `;
 
@@ -272,8 +226,9 @@ const ContactInput = styled.input`
 const ContactTextarea = styled.textarea`
   display: flex;
   border: 1px solid #d6d6d6;
+  margin-left: 10px;
   padding: 5px;
-
+  width: 400px;
   :focus {
     outline: none;
   }

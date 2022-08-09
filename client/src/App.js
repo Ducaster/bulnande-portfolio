@@ -2,9 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import "bootstrap/dist/css/bootstrap.css";
-import { GlobalStyle } from "./GlobalStyle";
 import ProjectRoute from "./routes/projectRoutes";
 import TeamRoutes from "./routes/teamRoutes";
+import { GlobalStyle } from "./style/GlobalStyle";
 
 function App() {
   return (

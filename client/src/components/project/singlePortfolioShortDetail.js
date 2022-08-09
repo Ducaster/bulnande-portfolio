@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { dummydata } from "../data/dummydata";
-import Layout from "../pages/layout";
+import { dummydataShort } from "../../data/dummydataShort";
+import Layout from "../../pages/layout";
 import {
   Content,
   ContentBox,
@@ -14,10 +14,10 @@ import {
   SubDiv,
   Text,
   VideoWrapper,
-} from "../style/detail.style";
+} from "../../style/detail.style";
 import PhotoModal from "./photoModal";
 
-function SinglePortfolioDetail() {
+export default function SinglePortfolioShortDetail() {
   const params = useParams();
 
   //사진 열리는 조건 상태
@@ -33,7 +33,7 @@ function SinglePortfolioDetail() {
   };
 
   //더미에서 데이터 추출
-  const data = dummydata.filter((el) => {
+  const data = dummydataShort.filter((el) => {
     return el.id === Number(params.id);
   });
 
@@ -128,5 +128,3 @@ function SinglePortfolioDetail() {
     </Layout>
   );
 }
-
-export default SinglePortfolioDetail;

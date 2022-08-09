@@ -8,15 +8,15 @@ import {
   MainDiv,
   MainTitle,
   SeeMore,
-} from "../style/project.style";
+} from "../../style/project.style";
 
-function SinglePortfolio({ data }) {
+export default function SinglePortfolioShort({ data }) {
   const navigate = useNavigate();
 
   //디테일 페이지로 이동
   const moveToDetail = (id) => {
     handleTop();
-    navigate(`/project/detail/${id}`);
+    navigate(`/project/sdetail/${id}`);
   };
 
   // 클릭하면 스크롤이 위로 올라가는 함수
@@ -38,8 +38,8 @@ function SinglePortfolio({ data }) {
             <Content>{data.title}</Content>
           </ContentBox>
           <ContentBox>
-            <ContentName>행사회차</ContentName>
-            <Content>{data.season}</Content>
+            <ContentName>행사일시</ContentName>
+            <Content>{data.date}</Content>
           </ContentBox>
           <ContentBox>
             <ContentName>행사분류</ContentName>
@@ -51,5 +51,3 @@ function SinglePortfolio({ data }) {
     </MainDiv>
   );
 }
-
-export default SinglePortfolio;

@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
-import { baseBlack, MediaQuery, pointColor } from "../GlobalStyle";
+import { baseBlack, MediaQuery, pointColor } from "../style/GlobalStyle";
 import { useEffect, useState } from "react";
 
-function Header() {
+export default function Header() {
   const navigate = useNavigate();
 
   //스크롤 포지션 상태
@@ -77,8 +77,6 @@ function Header() {
   );
 }
 
-export default Header;
-
 const Background = styled.div`
   display: flex;
   align-items: center;
@@ -112,7 +110,6 @@ const HeaderStyle = styled.div`
   img {
     width: 220px;
     margin: 10px;
-    /* height: 40px; */
   }
 
   ${MediaQuery.mobile} {
@@ -149,13 +146,4 @@ const Navbar = styled.div`
 
 const PathName = styled.a`
   margin-bottom: 15px;
-`;
-
-const DropdownBackGround = styled.div`
-  background-color: rgba(0, 0, 0, 0);
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  bottom: 0%;
-  right: 0%;
 `;

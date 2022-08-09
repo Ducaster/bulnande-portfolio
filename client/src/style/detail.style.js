@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { boaxFadeMove, MediaQuery, textAction } from "../GlobalStyle";
+import { boaxFadeMove, MediaQuery, textAction } from "./GlobalStyle";
 
 export const MainDiv = styled.div`
   display: flex;

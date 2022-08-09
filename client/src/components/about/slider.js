@@ -2,7 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { MediaQuery } from "../GlobalStyle";
+import { MediaQuery } from "../../style/GlobalStyle";
 
 export default function SimpleSlider() {
   const sourceImg = [
@@ -34,7 +34,7 @@ export default function SimpleSlider() {
   );
 }
 
-export const SliderDiv = styled.div`
+const SliderDiv = styled.div`
   margin: 60px 50px 20px 50px;
   justify-content: center;
   width: 600px;

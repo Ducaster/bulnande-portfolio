@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { background } from "../GlobalStyle";
+import { background } from "../style/GlobalStyle";
+import { FlexColumnDiv, FlexDiv } from "../style/utility.style";
 
-function Layout({ children, title }) {
+export default function Layout({ children, title }) {
   return (
     <MainWrapper>
       <Header />
@@ -13,19 +14,10 @@ function Layout({ children, title }) {
   );
 }
 
-export default Layout;
-
-export const MainWrapper = styled.div`
-  size: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const MainWrapper = styled(FlexColumnDiv)`
   background-color: ${background};
 `;
 
-export const MainDiv = styled.div`
-  display: flex;
-  justify-content: center;
+const MainDiv = styled(FlexDiv)`
   margin-top: 110px;
-  /* margin-bottom: 15px; */
 `;

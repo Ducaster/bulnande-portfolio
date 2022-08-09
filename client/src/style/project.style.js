@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MediaQuery, textAction } from "../GlobalStyle";
+import { MediaQuery, textAction } from "./GlobalStyle";
 
 export const MainDiv = styled.div`
   width: 565px;

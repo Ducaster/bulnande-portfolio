@@ -1,18 +1,11 @@
 import styled from "styled-components";
-import { boxFade, MediaQuery } from "../../GlobalStyle";
+import { boxFade, MediaQuery } from "../../style/GlobalStyle";
 import Fade from "@stahl.luke/react-reveal/Fade";
 
 export default function AboutSecond() {
   return (
     <ContentWrapper>
       <ValueList>
-        {/* <div className="valueTitle">
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
-            alt=""
-          />
-          <b>불난데 부채질</b>은 사람의 가치를 발견합니다.
-        </div> */}
         <Fade bottom>
           <ValueImgDiv>
             <BlackContentWrapper>
@@ -75,12 +68,11 @@ export default function AboutSecond() {
   );
 }
 
-export const ContentWrapper = styled.div`
+const ContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 560px;
-  /* background-color: #f7e9e9; */
   animation: 0.7s ease-in-out ${boxFade};
 
   ${MediaQuery.mobile} {
@@ -88,7 +80,7 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const ValueList = styled.div`
+const ValueList = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -109,7 +101,7 @@ export const ValueList = styled.div`
   }
 `;
 
-export const BlackContentWrapper = styled.div`
+const BlackContentWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 230px;
@@ -131,12 +123,12 @@ export const BlackContentWrapper = styled.div`
   }
 `;
 
-export const ValueImgDiv = styled.div`
+const ValueImgDiv = styled.div`
   display: flex;
   margin-bottom: 15px;
 `;
 
-export const ValueImg = styled.div`
+const ValueImg = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -164,7 +156,6 @@ export const ValueImg = styled.div`
   }
 
   .title {
-    //*** solid 1px red;
     display: flex;
     align-items: center;
     flex-direction: column;

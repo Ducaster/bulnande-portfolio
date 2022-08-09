@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { MainDiv } from "../style/detail.style";
-import SingleMember from "../components/singleMember";
+import SingleMember from "../components/team/singleMember";
 import { teamMember } from "../data/teamMember";
-import { MediaQuery } from "../GlobalStyle";
 import Layout from "./layout";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import { MediaQuery } from "../style/GlobalStyle";
 
-function Team() {
+export default function Team() {
   const [teamInfo, setTeamInfo] = useState({});
 
   useEffect(() => {
@@ -46,9 +46,7 @@ function Team() {
   );
 }
 
-export default Team;
-
-export const TextWrapper = styled.div`
+const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 600px;
