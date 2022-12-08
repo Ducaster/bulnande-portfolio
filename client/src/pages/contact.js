@@ -9,15 +9,15 @@ import { FlexColumnDiv, FlexDiv } from "../style/utility.style";
 export default function Contact() {
   const form = useRef();
 
-  useEffect(() => {
-    Swal.fire({
-      title: "저희 단체는 운영이 중단되었습니다.",
-      text: `저희 단체는 현재 운영이 중단되었습니다. 특별한 문의 사항이 있을 시 메일로 문의해주세요.`,
-      icon: "info",
-      timer: 5000,
-      timerProgressBar: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   Swal.fire({
+  //     title: "저희 단체는 운영이 중단되었습니다.",
+  //     text: `저희 단체는 현재 운영이 중단되었습니다. 특별한 문의 사항이 있을 시 메일로 문의해주세요.`,
+  //     icon: "info",
+  //     timer: 5000,
+  //     timerProgressBar: true,
+  //   });
+  // }, []);
 
   //메일보내는 함수
   const sendEmail = (e) => {
