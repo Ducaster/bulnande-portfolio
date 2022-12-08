@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { MediaQuery } from "../../style/GlobalStyle";
+import { FlexColumnDiv, FlexDiv } from "../../style/utility.style";
 
 export default function SingleMember({ data }) {
   return (
@@ -41,9 +42,7 @@ export default function SingleMember({ data }) {
   );
 }
 
-export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ContentWrapper = styled(FlexColumnDiv)`
   width: 600px;
   padding: 20px;
   background-color: white;
@@ -58,15 +57,13 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const AllTeam = styled.div`
-  display: flex;
+export const AllTeam = styled(FlexDiv)`
   justify-content: space-between;
   align-items: center;
   margin: 25px 20px 10px 20px;
 `;
 
-export const Profile = styled.div`
-  display: flex;
+export const Profile = styled(FlexDiv)`
   justify-content: center;
   width: 200px;
   height: 200px;
@@ -85,13 +82,10 @@ export const Profile = styled.div`
   }
 `;
 
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
+export const Content = styled(FlexColumnDiv)`
 `;
 
-export const Name = styled.div`
-  display: flex;
+export const Name = styled(FlexDiv)`
   justify-content: right;
 
   div {
@@ -107,9 +101,7 @@ export const Name = styled.div`
   }
 `;
 
-export const SubContent = styled.div`
-  display: flex;
-  flex-direction: column;
+export const SubContent = styled(FlexColumnDiv)`
   text-align: right;
   align-items: right;
   margin: 7px 0px 7px 0px;
@@ -129,13 +121,12 @@ export const SubContent = styled.div`
   }
 `;
 
-export const SubText = styled.div`
-  display: flex;
+export const SubText = styled(FlexDiv)`
   justify-content: right;
   font-size: 14px;
 `;
 
-export const ImageWarpper = styled.div`
+export const ImageWarpper = styled(FlexDiv)`
   display: flex;
   justify-content: right;
   img {

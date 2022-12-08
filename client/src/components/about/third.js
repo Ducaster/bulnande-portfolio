@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { boxFade, MediaQuery } from "../../style/GlobalStyle";
 import ImageSlider from "./slider";
 import Fade from "@stahl.luke/react-reveal/Fade";
+import { FlexDivCentered } from "../../style/utility.style";
 
 export default function AboutThird() {
   // 클릭하면 스크롤이 위로 올라가는 함수
@@ -59,14 +60,11 @@ export default function AboutThird() {
   );
 }
 
-const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+const ContentWrapper = styled(FlexDivCentered)`
   height: 650px;
   padding: 50px 0px 50px 0px;
   animation: 0.7s ease-in-out ${boxFade};
   background-color: white;
-  align-items: center;
 
   ${MediaQuery.mobile} {
     height: 600px;
@@ -74,10 +72,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const Musician = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Musician = styled(FlexDivCentered)`
   animation: 0.7s ease-in-out ${boxFade};
 
   .introLogoDiv {

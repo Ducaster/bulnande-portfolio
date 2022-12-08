@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import styled from "styled-components";
 import Layout from "./layout";
 import emailjs from "@emailjs/browser";
 import { baseBlack, boxFade, MediaQuery } from "../style/GlobalStyle";
 import Swal from "sweetalert2";
-import { FlexColumnDiv, FlexDiv } from "../style/utility.style";
+import { FlexColumnDiv, FlexDiv, FlexDivCentered } from "../style/utility.style";
 
 export default function Contact() {
   const form = useRef();
@@ -31,16 +31,15 @@ export default function Contact() {
         "user_8qHaapmo2rFmpMZ2GoV0k"
       )
       .then(
-        (result) => {
+        () => {
           Swal.fire({
             icon: "success",
             title: "메일발송 완료",
             text: "소중한 의견 감사합니다",
           });
-          console.log(form);
         },
         (error) => {
-          alert(error);
+          console.log(error);
         }
       );
   };
@@ -76,7 +75,7 @@ export default function Contact() {
                       <ContactTextarea id="message" />
                     </TextareaWrapper>
                     <div className="submitBtn">
-                      <ContactBtn type="submit" value="Send" />
+                      <ContactBtn as="input" type="submit" value="Send" />
                     </div>
                   </form>
                 </div>
@@ -96,6 +95,7 @@ export default function Contact() {
 }
 
 const MainContainer = styled(FlexColumnDiv)`
+  justify-content: center;
   gap: 20px;
   height: calc(100vh - 230px);
   animation: 0.7s ease-in-out ${boxFade};
@@ -106,9 +106,7 @@ const MainContainer = styled(FlexColumnDiv)`
   }
 `;
 
-const MainDiv = styled(FlexDiv)`
-  align-items: center;
-
+const MainDiv = styled(FlexDivCentered)`
   ${MediaQuery.middle} {
     flex-direction: column;
     gap: 15px;
@@ -116,11 +114,11 @@ const MainDiv = styled(FlexDiv)`
 `;
 
 const MainWrapper = styled(FlexColumnDiv)`
+  justify-content: center;
   gap: 14px;
 `;
 
-const ContentWrapper = styled(FlexDiv)`
-  align-items: center;
+const ContentWrapper = styled(FlexDivCentered)`
   width: 600px;
   padding: 10px;
   background-color: white;
@@ -139,6 +137,7 @@ const ContentWrapper = styled(FlexDiv)`
 `;
 
 const ImgDiv = styled(FlexDiv)`
+  justify-content: center;
   margin-left: 10px;
   overflow: hidden;
   border-radius: 15px;
@@ -188,7 +187,7 @@ const TextareaWrapper = styled(FlexDiv)`
   margin: 15px 5px 5px 5px;
 `;
 
-const ContentWarpper = styled.div`
+const ContentWarpper = styled(FlexDiv)`
   display: flex;
   margin: 5px;
   border-bottom: 1px solid #d6d6d6;
@@ -234,10 +233,7 @@ const ContactTextarea = styled.textarea`
   }
 `;
 
-const ContactBtn = styled.input`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const ContactBtn = styled(FlexDivCentered)`
   margin: 10px 5px 5px 5px;
   width: 465px;
   font-size: 14px;

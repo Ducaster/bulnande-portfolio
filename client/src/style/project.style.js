@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { MediaQuery, textAction } from "./GlobalStyle";
+import { FlexColumnDiv, FlexDiv } from "./utility.style";
 
-export const MainDiv = styled.div`
+export const MainDiv = styled(FlexColumnDiv)`
   width: 565px;
   height: 340px;
-  display: flex;
-  flex-direction: column;
   gap: 15px;
   background-color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -40px,
@@ -39,9 +38,8 @@ export const MainTitle = styled.div`
   }
 `;
 
-export const SeeMore = styled.div`
+export const SeeMore = styled(FlexDiv)`
   font-size: 10px;
-  display: flex;
   margin-top: 10px;
   justify-content: right;
   cursor: pointer;
@@ -51,8 +49,7 @@ export const SeeMore = styled.div`
   }
 `;
 
-export const ContentWarpper = styled.div`
-  display: flex;
+export const ContentWarpper = styled(FlexDiv)`
   img {
     width: 300px;
     border-radius: 15px;
@@ -76,9 +73,7 @@ export const ContentWarpper = styled.div`
   }
 `;
 
-export const ContentDiv = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ContentDiv = styled(FlexColumnDiv)`
   justify-content: center;
   margin-right: 30px;
 
@@ -88,8 +83,7 @@ export const ContentDiv = styled.div`
   }
 `;
 
-export const ContentBox = styled.div`
-  display: flex;
+export const ContentBox = styled(FlexDiv)`
   gap: 10px;
 `;
 

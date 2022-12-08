@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { baseBlack, MediaQuery } from "../style/GlobalStyle";
-import { FlexDiv } from "../style/utility.style";
+import { FlexDiv, FlexDivCentered } from "../style/utility.style";
 
 export default function Footer() {
   // 클릭하면 스크롤이 위로 올라가는 함수
@@ -42,15 +42,15 @@ export default function Footer() {
 }
 
 const MainDiv = styled(FlexDiv)`
+  justify-content: center;
   background-color: ${baseBlack};
   margin: 0;
 `;
 
-const FooterDiv = styled(FlexDiv)`
+const FooterDiv = styled(FlexDivCentered)`
   width: 1150px;
   height: 120px;
   margin: 0;
-  align-items: center;
   border: none;
   color: white;
 
@@ -81,8 +81,7 @@ const Left = styled.div`
   }
 `;
 
-const Right = styled.div`
-  display: flex;
+const Right = styled(FlexDiv)`
   gap: 10px;
   justify-content: right;
   flex: 1 0 auto;

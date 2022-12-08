@@ -6,6 +6,7 @@ import { useState } from "react";
 import { boxFade, MediaQuery, pointColor } from "../style/GlobalStyle";
 import SinglePortfolio from "../components/project/singlePortfolio";
 import SinglePortfolioShort from "../components/project/singlePortfolioShort";
+import { FlexColumnDiv, FlexDiv } from "../style/utility.style";
 
 export default function Project() {
   //장기프로젝트 데이터 상태
@@ -71,23 +72,20 @@ export default function Project() {
   );
 }
 
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+const MainContainer = styled(FlexColumnDiv)`
   gap: 15px;
   animation: 0.7s ease-in-out ${boxFade};
   margin: 35px 0px 25px 0px;
 `;
 
-const SearchBar = styled.div`
-  display: flex;
+const SearchBar = styled(FlexDiv)`
+  align-items: center;
   width: 1150px;
   height: 60px;
   background-color: white;
   border: 1px solid #f6f6f6;
   border-radius: 10px;
   padding: 5px 20px 5px 20px;
-  align-items: center;
 
   img {
     width: 25px;
@@ -134,7 +132,7 @@ const MainDiv = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
+const TextWrapper = styled(FlexDiv)`
   display: flex;
   color: #2f2f2f;
   width: 1150px;

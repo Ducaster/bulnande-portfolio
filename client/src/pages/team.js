@@ -7,6 +7,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { MediaQuery } from "../style/GlobalStyle";
+import { FlexColumnDiv } from "../style/utility.style";
 
 export default function Team() {
   const [teamInfo, setTeamInfo] = useState({});
@@ -46,9 +47,7 @@ export default function Team() {
   );
 }
 
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const TextWrapper = styled(FlexColumnDiv)`
   width: 600px;
   padding: 30px;
   background-color: white;
@@ -76,9 +75,8 @@ const TextWrapper = styled.div`
   }
 `;
 
-const CategoryWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const CategoryWrapper = styled(FlexColumnDiv)`
+  align-items: center;
   width: 600px;
   padding: 20px 30px 30px 30px;
   background-color: white;
@@ -88,7 +86,6 @@ const CategoryWrapper = styled.div`
   border-radius: 10px;
   font-size: 23px;
   font-weight: bold;
-  align-items: center;
 
   div {
     width: 540px;

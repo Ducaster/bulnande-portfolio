@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { boxFade, MediaQuery } from "../../style/GlobalStyle";
 import Fade from "@stahl.luke/react-reveal/Fade";
+import { FlexColumnDivCentered, FlexDiv, FlexDivCentered } from "../../style/utility.style";
 
 export default function AboutSecond() {
   return (
@@ -68,10 +69,7 @@ export default function AboutSecond() {
   );
 }
 
-const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const ContentWrapper = styled(FlexDivCentered)`
   height: 560px;
   animation: 0.7s ease-in-out ${boxFade};
 
@@ -80,10 +78,7 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const ValueList = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+const ValueList = styled(FlexColumnDivCentered)`
   animation: 0.7s ease-in-out ${boxFade};
 
   .valueTitle {
@@ -101,8 +96,7 @@ const ValueList = styled.div`
   }
 `;
 
-const BlackContentWrapper = styled.div`
-  display: flex;
+const BlackContentWrapper = styled(FlexDiv)`
   justify-content: center;
   width: 230px;
   height: 310px;
@@ -123,16 +117,11 @@ const BlackContentWrapper = styled.div`
   }
 `;
 
-const ValueImgDiv = styled.div`
-  display: flex;
+const ValueImgDiv = styled(FlexDiv)`
   margin-bottom: 15px;
 `;
 
-const ValueImg = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+const ValueImg = styled(FlexColumnDivCentered)`
   margin: 0px;
   animation: 0.7s ease-in-out ${boxFade};
 

@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { boaxFadeMove, MediaQuery, textAction } from "./GlobalStyle";
+import { FlexColumnDiv, FlexDiv } from "./utility.style";
 
-export const MainDiv = styled.div`
-  display: flex;
-  flex-direction: column;
+export const MainDiv = styled(FlexColumnDiv)`
   align-items: center;
   gap: 30px;
   animation: 0.6s ease-in-out ${boaxFadeMove};
@@ -44,8 +43,7 @@ export const MainTitle = styled.div`
   }
 `;
 
-export const SubDiv = styled.div`
-  display: flex;
+export const SubDiv = styled(FlexDiv)`
   gap: 15px;
   justify-content: center;
 
@@ -68,14 +66,11 @@ export const SubDiv = styled.div`
   }
 `;
 
-export const ContentDiv = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ContentDiv = styled(FlexColumnDiv)`
   justify-content: center;
 `;
 
-export const ContentBox = styled.div`
-  display: flex;
+export const ContentBox = styled(FlexDiv)`
   gap: 10px;
 `;
 
@@ -125,8 +120,7 @@ export const Text = styled.div`
   }
 `;
 
-export const VideoWrapper = styled.div`
-  display: flex;
+export const VideoWrapper = styled(FlexDiv)`
   justify-content: center;
 
   ${MediaQuery.tablet} {
