@@ -20,7 +20,7 @@ export default function Footer() {
             src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png"
             alt=""
           />
-          <div>Copyright © 2015-2020, Bulnande All Rights Reserved.</div>
+          <div>Copyright © Bulnande All Rights Reserved.</div>
         </Left>
         <Right>
           <Link to="/">
