@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { baseBlack, MediaQuery, pointColor } from "../style/GlobalStyle";
 import { useEffect, useState } from "react";
+import { FlexColumnDivCentered, FlexDiv } from "../style/utility.style";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -77,11 +78,7 @@ export default function Header() {
   );
 }
 
-const Background = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+const Background = styled(FlexColumnDivCentered)`
   position: fixed;
   top: 0;
   left: 0;
@@ -95,8 +92,7 @@ const Background = styled.div`
     props.scrollPosition > 100 ? "rgba(0, 0, 0, 0.1) 0px 3px 2px 0px" : "none"};
 `;
 
-const HeaderStyle = styled.div`
-  display: flex;
+const HeaderStyle = styled(FlexDiv)`
   justify-content: center;
 
   .changed_header {
@@ -119,10 +115,8 @@ const HeaderStyle = styled.div`
   }
 `;
 
-const Navbar = styled.div`
-  display: flex;
+const Navbar = styled(FlexDiv)`
   justify-content: center;
-  flex-direction: row;
   gap: 20px;
   margin-top: ${(props) => (props.scrollPosition > 100 ? "10px" : "0px")};
 

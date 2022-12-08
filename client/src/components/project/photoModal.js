@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MediaQuery } from "../../style/GlobalStyle";
-import { FlexDiv } from "../../style/utility.style";
+import { FlexDiv, FlexDivCentered } from "../../style/utility.style";
 
 export default function PhotoModal({ handleOpenPhoto, data, idx }) {
   return (
@@ -12,14 +12,13 @@ export default function PhotoModal({ handleOpenPhoto, data, idx }) {
   );
 }
 
-const MainDiv = styled(FlexDiv)`
+const MainDiv = styled(FlexDivCentered)`
   background-color: rgba(58, 58, 58, 0.4);
   position: fixed;
   top: 0%;
   left: 0%;
   bottom: 0%;
   right: 0%;
-  align-items: center;
   z-index: 10;
 
   div {

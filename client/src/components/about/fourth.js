@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MediaQuery } from "../../style/GlobalStyle";
 import Zoom from "@stahl.luke/react-reveal/Fade";
-import { FlexDiv } from "../../style/utility.style";
+import { FlexDivCentered } from "../../style/utility.style";
 
 export default function AboutFourth() {
   // 클릭하면 스크롤이 위로 올라가는 함수
@@ -88,18 +88,15 @@ export default function AboutFourth() {
   );
 }
 
-const ContentWrapper = styled(FlexDiv)`
+const ContentWrapper = styled(FlexDivCentered)`
   height: 720px;
-  align-items: center;
-
+  
   ${MediaQuery.mobile} {
     height: 650px;
   }
 `;
 
-const Concert = styled(FlexDiv)`
-  align-items: center;
-
+const Concert = styled(FlexDivCentered)`
   .concertInfo {
     display: flex;
     flex-direction: column;

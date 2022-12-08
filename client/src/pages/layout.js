@@ -19,5 +19,6 @@ const MainWrapper = styled(FlexColumnDiv)`
 `;
 
 const MainDiv = styled(FlexDiv)`
+  justify-content:center;
   margin-top: 110px;
 `;

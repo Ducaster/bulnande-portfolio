@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { boxFade, MediaQuery } from "../../style/GlobalStyle";
+import { FlexDiv, FlexDivCentered } from "../../style/utility.style";
 
 export default function AboutFirst() {
   return (
@@ -31,7 +32,7 @@ export default function AboutFirst() {
   );
 }
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled(FlexDivCentered)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,8 +82,7 @@ const ImageTrans = styled.div`
   }
 `;
 
-const TextArea = styled.div`
-  display: flex;
+const TextArea = styled(FlexDiv)`
   justify-content: center;
   margin-bottom: 30px;
   flex-direction: column;
