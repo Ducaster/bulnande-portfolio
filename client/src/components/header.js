@@ -49,7 +49,7 @@ export default function Header() {
           className={window.location.pathname === "/" ? "active" : ""}
           onClick={() => movePage("/")}
         >
-          About us
+          About
         </PathName>
         <PathName
           className={
@@ -79,6 +79,7 @@ export default function Header() {
 }
 
 const Background = styled(FlexColumnDivCentered)`
+  width: calc(100vw - 20px);
   position: fixed;
   top: 0;
   left: 0;
