@@ -63,5 +63,10 @@ const SliderDiv = styled.div`
     width: 250px;
     height: 150px;
     margin-bottom: 50px;
+
+    img {
+      width: 250px;
+      height: 150px;
+    }
   }
 `;

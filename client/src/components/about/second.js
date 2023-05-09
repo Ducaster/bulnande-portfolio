@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { boxFade, MediaQuery } from "../../style/GlobalStyle";
 import Fade from "@stahl.luke/react-reveal/Fade";
-import { FlexColumnDivCentered, FlexDiv, FlexDivCentered } from "../../style/utility.style";
+import {
+  FlexColumnDivCentered,
+  FlexDiv,
+  FlexDivCentered,
+} from "../../style/utility.style";
 
 export default function AboutSecond() {
   return (
@@ -80,6 +84,7 @@ const ContentWrapper = styled(FlexDivCentered)`
 
 const ValueList = styled(FlexColumnDivCentered)`
   animation: 0.7s ease-in-out ${boxFade};
+  /* width: calc(100vw - 40px); */
 
   .valueTitle {
     display: flex;
@@ -109,11 +114,11 @@ const BlackContentWrapper = styled(FlexDiv)`
   border-radius: 10px;
 
   ${MediaQuery.mobile} {
-    padding: 15px;
-    width: 100px;
+    padding: 10px;
+    width: 95px;
     height: 250px;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
 `;
 
@@ -173,7 +178,7 @@ const ValueImg = styled(FlexColumnDivCentered)`
     }
 
     p {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 `;

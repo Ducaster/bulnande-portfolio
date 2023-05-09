@@ -79,7 +79,6 @@ const Musician = styled(FlexDivCentered)`
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
-    //*** solid 1px red;
   }
 
   .introLogo {
@@ -137,7 +136,7 @@ const Musician = styled(FlexDivCentered)`
 
   ${MediaQuery.mobile} {
     flex-direction: column;
-    padding: 30px 0px 30px 0px;
+    padding: 20px 0px 20px 0px;
 
     .musician_comment {
       width: 250px;
@@ -148,7 +147,7 @@ const Musician = styled(FlexDivCentered)`
 
       p {
         margin-top: 20px;
-        font-size: 14px;
+        font-size: 12px;
       }
     }
   }

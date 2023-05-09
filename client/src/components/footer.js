@@ -20,11 +20,23 @@ export default function Footer() {
             src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png"
             alt=""
           />
-          <div>Copyright © Bulnande All Rights Reserved.</div>
+          <TextWrapper>
+            <SmallTextWrapper>
+              <SmallText>사업자번호 : 228-21-12021</SmallText>
+              <SmallText className="bar">|</SmallText>
+              <SmallText>대표 : 한승목</SmallText>
+            </SmallTextWrapper>
+            <SmallTextWrapper>
+              <SmallText>주소 : 노원구 동일로 1352 4F </SmallText>
+              <SmallText className="bar">|</SmallText>
+              <SmallText> 문의 : bulnande@naver.com</SmallText>
+            </SmallTextWrapper>
+          </TextWrapper>
+          <Copyright>Copyright © Bulnande All Rights Reserved.</Copyright>
         </Left>
         <Right>
           <Link to="/">
-            <PathName onClick={handleTop}>About us</PathName>
+            <PathName onClick={handleTop}>About</PathName>
           </Link>
           <Link to="/team">
             <PathName onClick={handleTop}>Team</PathName>
@@ -53,15 +65,17 @@ const FooterDiv = styled(FlexDivCentered)`
   margin: 0;
   border: none;
   color: white;
+  justify-content: space-between;
 
   ${MediaQuery.mobile} {
-    width: 360px;
-    height: 80px;
+    width: 100vw;
+    height: 150px;
+    padding: 10px;
   }
 `;
 
 const Left = styled.div`
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
 
   img {
     width: 150px;
@@ -75,16 +89,13 @@ const Left = styled.div`
     img {
       width: 100px;
     }
-    div {
-      display: none;
-    }
   }
 `;
 
 const Right = styled(FlexDiv)`
   gap: 10px;
   justify-content: right;
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
   font-size: 13px;
 
   a {
@@ -103,3 +114,49 @@ const Right = styled(FlexDiv)`
 `;
 
 const PathName = styled.div``;
+
+const Copyright = styled.div`
+  color: #777777;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+
+  ${MediaQuery.mobile} {
+    /* display: none; */
+  }
+`;
+
+const TextWrapper = styled.div`
+  margin: 6px 0px 3px 0px;
+
+  ${MediaQuery.mobile} {
+    &.top {
+      display: flex;
+      gap: 10px;
+    }
+  }
+`;
+
+const SmallTextWrapper = styled.div`
+  display: flex;
+  gap: 5px;
+
+  ${MediaQuery.mobile} {
+    flex-direction: column;
+    gap: 0px;
+  }
+`;
+
+const SmallText = styled.div`
+  font-weight: 300;
+  font-size: 9px;
+  line-height: 16px;
+  color: white;
+
+  ${MediaQuery.mobile} {
+    &.bar {
+      display: none;
+    }
+    /* width: 80px; */
+  }
+`;

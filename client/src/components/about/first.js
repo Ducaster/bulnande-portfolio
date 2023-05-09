@@ -36,6 +36,7 @@ const ContentWrapper = styled(FlexDivCentered)`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 700px;
   flex-direction: column;
   animation: 0.7s ease-in-out ${boxFade};
@@ -66,19 +67,8 @@ const ContentWrapper = styled(FlexDivCentered)`
   }
 
   ${MediaQuery.mobile} {
+    width: calc(100vw - 20px);
     height: 680px;
-  }
-`;
-
-const ImageTrans = styled.div`
-  display: flex;
-  justify-content: center;
-  animation: 0.7s ease-in-out ${boxFade};
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `;
 
@@ -101,13 +91,13 @@ const TextArea = styled(FlexDiv)`
   }
 
   ${MediaQuery.mobile} {
-    padding: 0px 30px 0px 30px;
+    padding: 0px 20px 0px 20px;
     .introTitle {
-      font-size: 22px;
+      font-size: 21px;
     }
 
     .introContent {
-      font-size: 14px;
+      font-size: 13px;
     }
   }
 `;
