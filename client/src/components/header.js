@@ -39,7 +39,7 @@ export default function Header() {
             className={
               scrollPosition < 100 ? "original_header" : "changed_header"
             }
-            src="https://cdn.discordapp.com/attachments/938684956916449330/939064243133775902/whitered.png"
+            src="assets/logo_redwhite.png"
             alt=""
           />
         </Link>

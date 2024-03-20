@@ -4,7 +4,11 @@ import Layout from "./layout";
 import emailjs from "@emailjs/browser";
 import { baseBlack, boxFade, MediaQuery } from "../style/GlobalStyle";
 import Swal from "sweetalert2";
-import { FlexColumnDiv, FlexDiv, FlexDivCentered } from "../style/utility.style";
+import {
+  FlexColumnDiv,
+  FlexDiv,
+  FlexDivCentered,
+} from "../style/utility.style";
 
 export default function Contact() {
   const form = useRef();
@@ -83,10 +87,7 @@ export default function Contact() {
             </ContentWrapper>
           </MainWrapper>
           <ImgDiv>
-            <img
-              src="https://cdn.discordapp.com/attachments/938684956916449330/945284820446117898/contact_img3.jpg"
-              alt=""
-            />
+            <img src="assets/contact_img.jpg" alt="" />
           </ImgDiv>
         </MainDiv>
       </MainContainer>

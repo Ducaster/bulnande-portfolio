@@ -16,10 +16,7 @@ export default function AboutSecond() {
             <BlackContentWrapper>
               <ValueImg>
                 <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238521065267200/festival_negative.png"
-                    alt=""
-                  />
+                  <img src="assets/festival_negative.png" alt="" />
                 </div>
                 <div className="maintitle">Culture Sharing</div>
                 <div className="title">
@@ -33,10 +30,7 @@ export default function AboutSecond() {
             <BlackContentWrapper>
               <ValueImg>
                 <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520499044352/orchestra_negative.png"
-                    alt=""
-                  />
+                  <img src="assets/orchestra_negative.png" alt="" />
                 </div>
                 <div className="maintitle">Artist</div>
                 <div className="title">
@@ -50,10 +44,7 @@ export default function AboutSecond() {
             <BlackContentWrapper>
               <ValueImg>
                 <div className="logo">
-                  <img
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/941238520851341362/business-people_negative.png"
-                    alt=""
-                  />
+                  <img src="assets/business-people_negative.png" alt="" />
                 </div>
                 <div className="maintitle">Connect</div>
                 <div className="title">

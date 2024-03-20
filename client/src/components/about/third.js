@@ -24,10 +24,7 @@ export default function AboutThird() {
           <div className="detail_comment">
             <div className="introLogoDiv">
               <div className="introLogo">
-                <img
-                  src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
-                  alt=""
-                />
+                <img src="assets/bulbu_symbol.png" alt="" />
               </div>
             </div>
             <div className="musician_comment">

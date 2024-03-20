@@ -7,10 +7,7 @@ export default function AboutFirst() {
     <ContentWrapper>
       <div className="introLogoDiv">
         <div className="introLogo">
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
-            alt=""
-          />
+          <img src="assets/bulbu_symbol.png" alt="" />
         </div>
       </div>
       <TextArea>
@@ -40,7 +37,7 @@ const ContentWrapper = styled(FlexDivCentered)`
   height: 700px;
   flex-direction: column;
   animation: 0.7s ease-in-out ${boxFade};
-  background-image: url("https://cdn.discordapp.com/attachments/938684956916449330/943107159523221524/pexels-josh-sorenson-976862.jpg");
+  background-image: url("assets/main.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 

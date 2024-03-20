@@ -16,10 +16,7 @@ export default function Footer() {
     <MainDiv>
       <FooterDiv>
         <Left>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/939045961383170068/white.png"
-            alt=""
-          />
+          <img src="assets/logo_white.png" alt="" />
           <TextWrapper>
             <SmallTextWrapper>
               <SmallText>사업자번호 : 228-21-12021</SmallText>

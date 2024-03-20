@@ -33,10 +33,7 @@ export default function Project() {
     <Layout>
       <MainContainer>
         <SearchBar>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/941881851671363634/search_icon_1.png"
-            alt=""
-          />
+          <img src="assets/search_icon_1.png" alt="" />
           <input
             type="text"
             placeholder="프로젝트명을 입력하세요"
@@ -44,10 +41,7 @@ export default function Project() {
           />
         </SearchBar>
         <TextWrapper>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
-            alt=""
-          />
+          <img src="assets/bulbu_symbol.png" alt="" />
           장기프로젝트
         </TextWrapper>
         <MainDiv className="mount">
@@ -56,10 +50,7 @@ export default function Project() {
           })}
         </MainDiv>
         <TextWrapper>
-          <img
-            src="https://cdn.discordapp.com/attachments/938684956916449330/938685685307686932/bulbu_symbol.jpeg"
-            alt=""
-          />
+          <img src="assets/bulbu_symbol.png" alt="" />
           단기프로젝트
         </TextWrapper>
         <MainDiv className="mount">

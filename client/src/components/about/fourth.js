@@ -20,10 +20,7 @@ export default function AboutFourth() {
           <div className="concertInfo">
             <div className="introLogoDiv">
               <div className="introLogo">
-                <img
-                  src="https://cdn.discordapp.com/attachments/938684956916449330/941231446910185492/2017_.png"
-                  alt=""
-                />
+                <img src="assets/bulbu_symbol.png" alt="" />
               </div>
             </div>
             <div className="concertTitleDiv">
@@ -90,7 +87,7 @@ export default function AboutFourth() {
 
 const ContentWrapper = styled(FlexDivCentered)`
   height: 720px;
-  
+
   ${MediaQuery.mobile} {
     height: 650px;
   }
