@@ -1,7 +1,7 @@
 export const dummydata = [
   {
     id: 1,
-    img: "https://cdn.discordapp.com/attachments/938684956916449330/938689047805698048/photo_2017-12-09_23-10-00.jpeg",
+    img: "assets/hb_thumbnail.jpeg",
     title: "하늘에별따기",
     date: "2017-07-14",
     performer: "최연호, 최은희, 주한나, 최성준, 홍신기, 이민형 등",
@@ -9,15 +9,11 @@ export const dummydata = [
     desc: "불난데 부채질의 고품격 뮤직&토크 콘서트. 아마츄어 공연자들의 다양한 공연과 토크가 어루어진 참여형 콘서트",
     season: "시즌1 ~ 5",
     video: "https://www.youtube.com/embed/lin00EwCFME",
-    photo: [
-      "https://cdn.discordapp.com/attachments/938684956916449330/941211195044683807/photo_2022-02-10_14.54.28.jpeg",
-      "https://cdn.discordapp.com/attachments/938684956916449330/941211195413774336/photo_2022-02-10_14.54.30.jpeg",
-      "https://cdn.discordapp.com/attachments/938684956916449330/941211195044683807/photo_2022-02-10_14.54.28.jpeg",
-    ],
+    photo: ["assets/hb1.jpeg", "assets/hb2.jpeg"],
   },
   {
     id: 2,
-    img: "https://cdn.discordapp.com/attachments/938684956916449330/941210226579894302/photo_2022-02-10_14.50.07.jpeg",
+    img: "assets/season1.jpeg",
     title: "시즌콘서트",
     date: "2017-03-12",
     performer: "시즌",
@@ -25,26 +21,22 @@ export const dummydata = [
     desc: "공연팀 '시즌'의 토크와 음악이 어루어진 참여형 콘서트",
     season: "시즌1 ~ 10",
     video: "https://www.youtube.com/embed/rnLDl0ZE5i0",
-    photo: [
-      "https://cdn.discordapp.com/attachments/938684956916449330/941196311561125889/photo_2022-02-10_13.57.46.jpeg",
-    ],
+    photo: ["assets/season2.jpeg"],
   },
   {
     id: 3,
-    img: "https://cdn.discordapp.com/attachments/938684956916449330/941607679649017906/photo_2022-02-11_17.11.58.jpeg",
+    img: "assets/1250prj1.jpeg",
     title: "1250프로젝트",
     date: "2017-03-12",
     performer: "불난데부채질 팀",
     category: "참여형프로그램",
     desc: "사람한번 돼 보자! 다양한 강연과 참여형 프로그램을 통한 역량향상 프로젝트",
     season: "시즌1 ~ 5",
-    photo: [
-      "https://cdn.discordapp.com/attachments/938684956916449330/941607679892267038/photo_2022-02-11_17.12.12.jpeg",
-    ],
+    photo: ["assets/1250prj2.jpeg"],
   },
   {
     id: 4,
-    img: "https://cdn.discordapp.com/attachments/938684956916449330/941184523612323840/photo_2022-02-10_13.10.46.jpeg",
+    img: "assets/wpd1.jpeg",
     title: "위.필.당",
     date: "2016-04-25",
     performer: "소울 중창단",

@@ -37,6 +37,8 @@ export default function SinglePortfolioDetail() {
     return el.id === Number(params.id);
   });
 
+  console.log(data[0]);
+
   return (
     <Layout>
       <MainDiv>
@@ -46,7 +48,7 @@ export default function SinglePortfolioDetail() {
             <span>{data[0].title}</span>
           </MainTitle>
           <SubDiv>
-            <img src={data[0].img} alt="" />
+            <img src={`${process.env.PUBLIC_URL}/${data[0].img}`} alt="" />
             <ContentDiv>
               <ContentBox>
                 <ContentName>행사명</ContentName>
@@ -89,7 +91,7 @@ export default function SinglePortfolioDetail() {
                       style={{ cursor: "pointer" }}
                       key={idx}
                       onClick={() => handleOpenPhoto(idx)}
-                      src={el}
+                      src={`${process.env.PUBLIC_URL}/${el}`}
                       alt=""
                     />
                   );

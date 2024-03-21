@@ -6,7 +6,7 @@ export default function PhotoModal({ handleOpenPhoto, data, idx }) {
   return (
     <MainDiv onClick={handleOpenPhoto}>
       <div>
-        <Photo src={data[idx]} alt="" />
+        <Photo src={`${process.env.PUBLIC_URL}/${data[idx]}`} alt="" />
       </div>
     </MainDiv>
   );
