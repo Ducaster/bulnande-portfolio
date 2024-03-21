@@ -39,7 +39,7 @@ export default function Header() {
             className={
               scrollPosition < 100 ? "original_header" : "changed_header"
             }
-            src="assets/logo_redwhite.png"
+            src={`${process.env.PUBLIC_URL}/assets/logo_redwhite.png`}
             alt=""
           />
         </Link>

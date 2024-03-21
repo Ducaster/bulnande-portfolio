@@ -3,8 +3,7 @@ export const teamMember = [
     id: 1,
     name: "이민형",
     position: "대표",
-    profile:
-      "https://cdn.discordapp.com/attachments/938684956916449330/940071831719792740/photo_2022-02-07_11.29.31.jpeg",
+    profile: "assets/lmh.jpeg",
     works: ["단체 운영 총괄", "프로젝트 전반 기획 및 운영"],
     career: ["前 강연플랫폼 AletheiaSchool 대표", "서울시립대 경영학부 전공"],
     email: "mlimshs@gmail.com",

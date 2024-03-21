@@ -41,18 +41,14 @@ export default function AboutFourth() {
             <div>
               <div>
                 <Link to="project/detail/1" onClick={handleTop}>
-                  <img
-                    name="하늘에별따기"
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/939322806498394192/bulbuConcert.jpg"
-                    alt=""
-                  />
+                  <img name="하늘에별따기" src="assets/habyul.jpeg" alt="" />
                 </Link>
               </div>
               <div>
                 <Link to="project/detail/3" onClick={handleTop}>
                   <img
                     name="1250project"
-                    src="https://media.discordapp.net/attachments/938684956916449330/939783195367444490/concert.2.jpeg"
+                    src="assets/1250project.jpeg"
                     alt=""
                   />
                 </Link>
@@ -61,20 +57,12 @@ export default function AboutFourth() {
             <div>
               <div>
                 <Link to="project/detail/2" onClick={handleTop}>
-                  <img
-                    name="시즌"
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/939783195673657364/concert1.jpeg"
-                    alt=""
-                  />
+                  <img name="시즌" src="assets/season_concert.png" alt="" />
                 </Link>
               </div>
               <div>
                 <Link to="project/sdetail/3" onClick={handleTop}>
-                  <img
-                    name="소통"
-                    src="https://cdn.discordapp.com/attachments/938684956916449330/939783196034359296/concert3.jpeg"
-                    alt=""
-                  />
+                  <img name="소통" src="assets/soul_concert.jpeg" alt="" />
                 </Link>
               </div>
             </div>
