@@ -16,7 +16,7 @@ export default function Footer() {
     <MainDiv>
       <FooterDiv>
         <Left>
-          <img src="assets/logo_white.png" alt="" />
+          <img src={`${process.env.PUBLIC_URL}/assets/logo_white.png`} alt="" />
           <TextWrapper>
             <SmallTextWrapper>
               <SmallText>사업자번호 : 228-21-12021</SmallText>
